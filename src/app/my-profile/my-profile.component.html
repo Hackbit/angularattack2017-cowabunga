@@ -19,14 +19,10 @@
           </div>
         </div>
         <div class="col-sm-8">
-          <cowabunga-achievement *ngFor="let achievement of user?.achievements" [achievement]="achievement"></cowabunga-achievement>
+          <cowabunga-user-check-ins [checkIns]="checkIns"></cowabunga-user-check-ins>
           <cowabunga-badges [badges]="user?.badges"></cowabunga-badges>
         </div>
       </div>
-
-      <cowabunga-user-check-ins [checkIns]="checkIns"></cowabunga-user-check-ins>
-      <cowabunga-badges [badges]="user?.badges"></cowabunga-badges>
-
     </div>
   </div>
 </div>

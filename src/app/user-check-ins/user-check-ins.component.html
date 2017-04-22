@@ -1,5 +1,10 @@
-Check-ins:
-{{ checkIns }}
-<div *ngFor="let checkIn of checkIns">
-  <cowabunga-user-check-in [checkIn]="checkIn"></cowabunga-user-check-in>
+<div class="card mb-3">
+  <div class="card-header">
+    Check-Ins
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let checkIn of checkIns">
+      <cowabunga-user-check-in [checkIn]="checkIn"></cowabunga-user-check-in>
+    </li>
+  </ul>
 </div>
