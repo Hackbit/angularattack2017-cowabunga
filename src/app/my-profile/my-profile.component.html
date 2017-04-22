@@ -1,3 +1,4 @@
 {{user?.name}}
+<button (click)="logout()">Sign out</button>
 
 <cowabunga-achievement *ngFor="let achievement of user?.achievements" [achievement]="achievement"></cowabunga-achievement>
