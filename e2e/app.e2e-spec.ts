@@ -7,8 +7,8 @@ describe('angularattack2017-cowabunga App', () => {
     page = new Angularattack2017CowabungaPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying cowabunga works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('cowabunga works!');
   });
 });

@@ -6,6 +6,6 @@ export class Angularattack2017CowabungaPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('cowabunga-root h1')).getText();
   }
 }
