@@ -28,11 +28,19 @@
   line-height: 50px;
 }
 
+.header__profile-image {
+  border-radius: 50%;
+  height: 40px;
+  overflow: hidden;
+  margin-right: 5px;
+  width: 40px;
+}
+
 h1 {
   color: #fff;
   font-size: 1rem;
 }
 
 .main {
-  margin-top: 50px;
+  margin-top: 65px;
 }
