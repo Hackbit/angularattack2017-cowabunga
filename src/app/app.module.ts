@@ -19,6 +19,7 @@ import { SignedInGuard } from './signed-in.guard';
 import { HeaderComponent } from './header/header.component';
 import { LocationService } from 'app/location.service';
 import { MainComponent } from './main/main.component';
+import { DistancePipe } from './distance.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MainComponent } from './main/main.component';
     AchievementComponent,
     LoginComponent,
     HeaderComponent,
-    MainComponent
+    MainComponent,
+    DistancePipe
   ],
   imports: [
     BrowserModule,
