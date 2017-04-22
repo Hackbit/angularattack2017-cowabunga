@@ -1,10 +1,14 @@
-<div class="name">{{achievement.name}}</div>
-<div class="description">{{achievement.description}}</div>
-<div class="location">
-  ({{achievement.location.coordinates.split(',')[0]}}, {{achievement.location.coordinates.split(',')[1]}}),
-  {{achievement.location.country}}
-</div>
-<div class="achieved-count">Achieve count: {{achievement.achievedCount}}</div>
-<div class="image">
-  <img [src]="achievement.imageUrl"/>
+<div class="card achievement">
+  <img [src]="achievement.imageUrl" class="card-img-top">
+  <div class="card-block">
+    <h4 class="card-title achievement__name">{{achievement.name}}</h4>
+    <p class="card-text">
+      {{achievement.description}}
+    </p>
+    <div class="achievement__location">
+      ({{achievement.location.coordinates.split(',')[0]}}, {{achievement.location.coordinates.split(',')[1]}}),
+      {{achievement.location.country}}
+    </div>
+    <div class="achievement__achieved-count">Achieve count: {{achievement.achievedCount}}</div>
+  </div>
 </div>
