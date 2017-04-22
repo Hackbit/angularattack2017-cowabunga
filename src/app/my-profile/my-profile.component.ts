@@ -6,6 +6,7 @@ import { User } from '../user';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'cowabunga-my-profile',
@@ -19,7 +20,8 @@ export class MyProfileComponent implements OnInit, OnDestroy {
   constructor(
     private database: AngularFireDatabase,
     private router: Router,
-    private userService: UserService) {
+    private userService: UserService,
+    private storageService: StorageService) {
   }
 
   ngOnInit() {
@@ -30,6 +32,11 @@ export class MyProfileComponent implements OnInit, OnDestroy {
   logout() {
     this.userService.signOut();
     this.router.navigate(['/']);
+  }
+
+  upload(event) {
+    const file = event.srcElement.files[0];
+    this.storageService.saveImage(file).subscribe(url => console.log(url));
   }
 
   ngOnDestroy() {

@@ -23,6 +23,7 @@ import { MainComponent } from './main/main.component';
 import { DistancePipe } from './distance.pipe';
 import { AchievementDetailsComponent } from './achievement-details/achievement-details.component';
 import { AgmCoreModule } from '@agm/core';
+import { StorageService } from './storage.service';
 
 const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
 
@@ -51,7 +52,7 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
     }),
     BsDropdownModule.forRoot()
   ],
-  providers: [AuthGuard, SignedInGuard, UserService, LocationService],
+  providers: [AuthGuard, SignedInGuard, UserService, LocationService, StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

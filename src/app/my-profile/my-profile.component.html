@@ -4,4 +4,6 @@
   <button (click)="logout()">Sign out</button>
 
   <cowabunga-achievement *ngFor="let achievement of user?.achievements" [achievement]="achievement"></cowabunga-achievement>
+
+  Upload picture to achievement: <input type="file" (change)="upload($event)">
 </main>
