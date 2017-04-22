@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -47,7 +48,8 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
     AngularFireDatabaseModule,
     AgmCoreModule.forRoot({
       apiKey: GOOGLE_MAPS_API_KEY
-    })
+    }),
+    BsDropdownModule.forRoot()
   ],
   providers: [AuthGuard, SignedInGuard, UserService, LocationService],
   bootstrap: [AppComponent]
