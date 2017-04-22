@@ -11,6 +11,7 @@ import { firebaseConfig } from './firebase-config';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AchievementsComponent } from './achievements/achievements.component';
+import { AchievementComponent } from './achievement/achievement.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -18,7 +19,8 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     MyProfileComponent,
     AchievementsComponent,
-    LoginComponent,
+    AchievementComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
