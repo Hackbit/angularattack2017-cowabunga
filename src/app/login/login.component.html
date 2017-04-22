@@ -3,8 +3,9 @@
     <h1>Cowabunga</h1>
   </div>
   <div class="login__buttons">
-    <button (click)="loginGoogle()">Sign in with Google</button>
-    <button (click)="loginFacebook()">Sign in with Facebook</button>
+    <button (click)="loginGoogle()" class="button button--google">Sign in with Google</button>
+    <button (click)="loginFacebook()" class="button button--facebook">Sign in with Facebook</button>
+    <button class="button button--github">Sign in with GitHub</button>
     <button (click)="logout()">Sign out</button>
     <div *ngIf="error">{{ error }}</div>
   </div>

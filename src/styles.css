@@ -1,4 +1,28 @@
 body {
+  font-family: 'Raleway', sans-serif;
   font-size: 14px;
   margin: 0;
+}
+
+.button {
+  background-color: #fff;
+  border: 0;
+  border-radius: 2rem;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+}
+
+.button--google {
+
+}
+
+.button--facebook {
+
+}
+
+.button--github {
+
 }
