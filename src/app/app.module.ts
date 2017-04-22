@@ -1,12 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule, AUTH_PROVIDERS } from 'angularfire2/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { firebaseAuthConfig, firebaseConfig } from './firebase-config';
-import { AngularFireModule } from 'angularfire2';
+import { firebaseConfig } from './firebase-config';
 
 @NgModule({
   declarations: [
@@ -14,12 +15,14 @@ import { AngularFireModule } from 'angularfire2';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
