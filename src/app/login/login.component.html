@@ -1,6 +1,11 @@
-
-<button (click)="loginGoogle()">Sign in with Google</button>
-<button (click)="loginFacebook()">Sign in with Facebook</button>
-<button (click)="logout()">Sign out</button>
-
-<div *ngIf="error">{{ error }}</div>
+<div class="login">
+  <div class="login__heading">
+    <h1>Cowabunga</h1>
+  </div>
+  <div class="login__buttons">
+    <button (click)="loginGoogle()">Sign in with Google</button>
+    <button (click)="loginFacebook()">Sign in with Facebook</button>
+    <button (click)="logout()">Sign out</button>
+    <div *ngIf="error">{{ error }}</div>
+  </div>
+</div>
