@@ -4,11 +4,13 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
+import { SignedInGuard } from './signed-in.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [SignedInGuard]
   },
   {
     path: 'my-profile',

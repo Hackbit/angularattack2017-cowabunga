@@ -27,4 +27,8 @@ export class UserService {
   signOut() {
     return this.afAuth.auth.signOut();
   }
+
+  isSignedIn() {
+    return !!this.afAuth.auth.currentUser;
+  }
 }
