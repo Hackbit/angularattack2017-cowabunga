@@ -49,7 +49,8 @@ export class CheckInComponent implements OnInit {
       description: this.description,
       images: this.images,
       timestamp: this.timestamp,
-      checkInTimestamp: Date.now()
+      checkInTimestamp: Date.now(),
+      achievement: this.id
     });
     this.location.back();
   }
