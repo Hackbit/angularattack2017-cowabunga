@@ -6,4 +6,8 @@
   <cowabunga-achievement *ngFor="let achievement of user?.achievements" [achievement]="achievement"></cowabunga-achievement>
 
   Upload picture to achievement: <input type="file" (change)="upload($event)">
+
+  <div>
+    <cowabunga-badges [badges]="user?.badges"></cowabunga-badges>
+  </div>
 </main>

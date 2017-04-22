@@ -24,6 +24,8 @@ import { DistancePipe } from './distance.pipe';
 import { AchievementDetailsComponent } from './achievement-details/achievement-details.component';
 import { AgmCoreModule } from '@agm/core';
 import { StorageService } from './storage.service';
+import { BadgesComponent } from './badges/badges.component';
+import { BadgeComponent } from './badge/badge.component';
 
 const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
 
@@ -37,7 +39,9 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
     HeaderComponent,
     MainComponent,
     AchievementDetailsComponent,
-    DistancePipe
+    DistancePipe,
+    BadgesComponent,
+    BadgeComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { StorageService } from '../storage.service';
+import { Badge } from '../badge';
 
 @Component({
   selector: 'cowabunga-my-profile',
