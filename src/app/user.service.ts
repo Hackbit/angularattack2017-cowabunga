@@ -7,6 +7,8 @@ import 'rxjs/add/observable/of';
 @Injectable()
 export class UserService {
 
+  user;
+
   constructor(private afAuth: AngularFireAuth, private database: AngularFireDatabase) { }
 
   createUser() {
@@ -29,6 +31,6 @@ export class UserService {
   }
 
   isSignedIn() {
-    return !!this.afAuth.auth.currentUser;
+    return this.afAuth.authState.map(state => !!state);
   }
 }
