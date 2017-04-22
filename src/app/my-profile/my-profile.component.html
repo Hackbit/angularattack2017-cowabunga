@@ -1,13 +1,18 @@
-<cowabunga-header hasBackButton="true" title="My Profile" [hasProfileButton]="false"></cowabunga-header>
-<main class="container-fluid main">
-  {{user?.name}}
-  <button (click)="logout()">Sign out</button>
-
-  <cowabunga-achievement *ngFor="let achievement of user?.achievements" [achievement]="achievement"></cowabunga-achievement>
-
-  Upload picture to achievement: <input type="file" (change)="upload($event)">
-
-  <div>
-    <cowabunga-badges [badges]="user?.badges"></cowabunga-badges>
+<div class="view">
+  <div class="view__header">
+    <cowabunga-header hasBackButton="true" title="My Profile" [hasProfileButton]="false"></cowabunga-header>
   </div>
-</main>
+  <div class="view__body">
+    <div class="container-fluid">
+      {{user?.name}}
+      <button (click)="logout()">Sign out</button>
+      <cowabunga-achievement *ngFor="let achievement of user?.achievements" [achievement]="achievement"></cowabunga-achievement>
+
+      Upload picture to achievement: <input type="file" (change)="upload($event)">
+
+      <div>
+        <cowabunga-badges [badges]="user?.badges"></cowabunga-badges>
+      </div>
+    </div>
+  </div>
+</div>

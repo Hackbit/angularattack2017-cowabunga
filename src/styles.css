@@ -3,8 +3,23 @@ body {
   margin: 0;
 }
 
-.main {
-  margin-top: 50px;
+.view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.view__header {
+  flex: 0 0 50px;
+}
+
+.view__body {
+  flex: 1 1 auto;
+  overflow: auto;
 }
 
 .btn {

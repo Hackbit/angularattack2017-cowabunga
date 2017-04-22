@@ -1,5 +1,8 @@
+:host {
+  flex: 0 0 50px;
+}
+
 .header {
-  background-image: radial-gradient(circle, rgb(133, 45, 145) 0%, rgb(49, 42, 108) 100%);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
