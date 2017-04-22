@@ -1,8 +1,8 @@
 .sebm-google-map-container {
   height: 260px;
+  width: 100%;
 }
 
 h1 {
-  color: #fff;
   font-size: 1.5rem;
 }
