@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserService } from 'app/user.service';
 import { User } from 'app/user';
 import { Observable } from 'rxjs/Observable';
@@ -11,6 +11,9 @@ import { Location } from '@angular/common';
 })
 export class HeaderComponent implements OnInit {
   user: Observable<User>;
+
+  @Input()
+  hasBackButton: Boolean;
 
   constructor(private userService: UserService, private location: Location) { }
 

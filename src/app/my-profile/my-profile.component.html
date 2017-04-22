@@ -1,4 +1,7 @@
-{{user?.name}}
-<button (click)="logout()">Sign out</button>
+<cowabunga-header hasBackButton="true"></cowabunga-header>
+<main class="container-fluid main">
+  {{user?.name}}
+  <button (click)="logout()">Sign out</button>
 
-<cowabunga-achievement *ngFor="let achievement of user?.achievements" [achievement]="achievement"></cowabunga-achievement>
+  <cowabunga-achievement *ngFor="let achievement of user?.achievements" [achievement]="achievement"></cowabunga-achievement>
+</main>

@@ -1,18 +1,21 @@
-<div class="text-center mb-3">
-  <div class="btn-group" dropdown [container]="'body'">
-    <button dropdownToggle type="button" class="btn dropdown-toggle">
-      Button dropdown <span class="caret"></span>
-    </button>
-    <ul *dropdownMenu class="dropdown-menu" role="menu">
-      <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
-      <li class="divider dropdown-divider"></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
-      </li>
-    </ul>
+<cowabunga-header></cowabunga-header>
+<main class="container-fluid main">
+  <div class="text-center mb-3">
+    <div class="btn-group" dropdown [container]="'body'">
+      <button dropdownToggle type="button" class="btn dropdown-toggle">
+        Button dropdown <span class="caret"></span>
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+        <li class="divider dropdown-divider"></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
-<div class="row">
-  <cowabunga-achievement *ngFor="let achievement of achievements | async" [achievement]="achievement" class="col-sm-6 col-md-4"></cowabunga-achievement>
-</div>
+  <div class="row">
+    <cowabunga-achievement *ngFor="let achievement of achievements | async" [achievement]="achievement" class="col-sm-6 col-md-4"></cowabunga-achievement>
+  </div>
+</main>
