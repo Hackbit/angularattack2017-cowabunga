@@ -1,5 +1,7 @@
+@import 'node_modules/bootstrap/scss/_mixins.scss';
+@import 'node_modules/bootstrap/scss/_variables.scss';
+
 .login {
-  align-items: center;
   background-image: linear-gradient(to bottom, rgba(133, 45, 145, 0.9) 0%, rgba(49, 42, 108, 0.9) 100%), url('/assets/background.jpg');
   background-position: 50% 50%;
   background-size: cover;
@@ -13,27 +15,19 @@
   width: 100%;
 }
 
-.login__heading {
-  align-items: center;
-  display: flex;
-  flex: 1 1 auto;
-  justify-content: center;
-}
-
-.login__buttons {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  justify-content: center;
-}
-
 h1 {
   color: #fff;
   font-family: 'Righteous', sans-serif;
   font-size: 3rem;
   margin: 0;
+  margin-bottom: 1em;
   letter-spacing: -1px;
   line-height: 1;
+  text-align: center;
   text-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
   text-transform: lowercase;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 5rem;
+  }
 }

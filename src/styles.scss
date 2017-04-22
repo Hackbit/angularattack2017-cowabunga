@@ -1,3 +1,5 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
+
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
@@ -56,7 +58,6 @@ body {
 
 .btn {
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 1.25rem;
   color: #fff;
   font-family: inherit;
 }
@@ -66,26 +67,18 @@ body {
   border: 0;
 }
 
-.btn-lg {
-  border-radius: 2rem;
-}
-
 .button {
   background-color: #fff;
   border: 0;
-  border-radius: 2rem;
   display: flex;
   font-family: inherit;
-  line-height: 1rem;
-  margin-bottom: 1rem;
-  padding: 1rem;
 
   &__icon {
     flex: 0 0 2rem;
   }
 
   &__label {
-    padding-right: 2rem;
+    flex: 1 1 auto;
   }
 
   &--google {

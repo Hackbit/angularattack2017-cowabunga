@@ -1,32 +1,40 @@
 <div class="login">
-  <div class="login__heading">
-    <h1>Cowabunga</h1>
-  </div>
+  <h1>Cowabunga</h1>
   <div class="login__buttons">
-    <button (click)="loginGoogle()" class="btn button button--google">
-      <div class="button__icon">
-        <i class="fa fa-google" aria-hidden="true"></i>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 offset-md-2 col-md-8 offset-lg-0 col-lg-4 mb-3">
+          <button (click)="loginGoogle()" class="btn btn-lg btn-block button button--google">
+            <div class="button__icon">
+              <i class="fa fa-google" aria-hidden="true"></i>
+            </div>
+            <div class="button__label">
+              Sign in with Google
+            </div>
+          </button>
+        </div>
+        <div class="col-12 offset-md-2 col-md-8 offset-lg-0 col-lg-4 mb-3">
+          <button (click)="loginFacebook()" class="btn btn-lg btn-block button button--facebook btn-block">
+            <div class="button__icon">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </div>
+            <div class="button__label">
+              Sign in with Facebook
+            </div>
+          </button>
+        </div>
+        <div class="col-12 offset-md-2 col-md-8 offset-lg-0 col-lg-4 mb-3">
+          <button (click)="loginGithub()" class="btn btn-lg btn-block button button--github btn-block">
+            <div class="button__icon">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </div>
+            <div class="button__label">
+              Sign in with GitHub
+            </div>
+          </button>
+        </div>
       </div>
-      <div class="button__label">
-        Sign in with Google
-      </div>
-    </button>
-    <button (click)="loginFacebook()" class="btn button button--facebook">
-      <div class="button__icon">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-      </div>
-      <div class="button__label">
-        Sign in with Facebook
-      </div>
-    </button>
-    <button (click)="loginGithub()" class="btn button button--github">
-      <div class="button__icon">
-        <i class="fa fa-github" aria-hidden="true"></i>
-      </div>
-      <div class="button__label">
-        Sign in with GitHub
-      </div>
-    </button>
-    <div *ngIf="error">{{ error }}</div>
+      <div *ngIf="error">{{ error }}</div>
+    </div>
   </div>
 </div>
