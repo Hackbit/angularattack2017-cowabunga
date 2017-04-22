@@ -3,6 +3,10 @@ body {
   margin: 0;
 }
 
+.container-fluid {
+  max-width: 1140px;
+}
+
 .view {
   display: flex;
   flex-direction: column;
