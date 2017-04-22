@@ -8,15 +8,13 @@ import 'rxjs/add/operator/take';
 
 @Injectable()
 export class UserService {
-
-  user: User;
-
-  constructor(private afAuth: AngularFireAuth, private database: AngularFireDatabase) { }
+  constructor(private afAuth: AngularFireAuth, private database: AngularFireDatabase) {
+  }
 
   createUser() {
     this.afAuth.authState.map(user => {
       this.database.object(`users/${this.afAuth.auth.currentUser.uid}`).update(
-        {name: user.displayName, photoURL: user.photoURL, achievements: []}
+        { name: user.displayName, photoURL: user.photoURL, achievements: [] }
       );
     }).take(1).subscribe();
   }
@@ -34,5 +32,11 @@ export class UserService {
 
   isSignedIn() {
     return this.afAuth.authState.map(state => !!state);
+  }
+
+  addCheckIn(checkInData) {
+    this.getUser().take(1).subscribe(user => {
+      this.database.list(`users/${user.$key}/checkIns`).push(checkInData);
+    });
   }
 }

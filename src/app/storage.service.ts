@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { FirebaseApp } from 'angularfire2';
 import * as firebase from 'firebase';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class StorageService {
 
-  constructor(private firebaseApp: FirebaseApp) {}
+  constructor() {
+  }
 
   saveImage(file: File): Observable<string> {
-    // FIXME: generate uniqe identifiers for children
-    alert(typeof firebase.storage());
+    // FIXME: generate unique identifiers for children
     const storageRef = firebase.storage().ref();
     const uploadTask = storageRef.child('images/' + file.name).put(file);
 

@@ -1,0 +1,8 @@
+Description: <input type="text" [(ngModel)]="description" />
+
+<datepicker [(ngModel)]="timestamp" [showWeeks]="true"></datepicker>
+
+<input type="file" (change)="upload($event)">
+{{images.length}} files uploaded
+
+<button type="button" class="btn btn-success" (click)="checkIn()">Check in!</button>

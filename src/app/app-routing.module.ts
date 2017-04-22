@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { SignedInGuard } from './signed-in.guard';
 import { MainComponent } from './main/main.component';
 import { AchievementDetailsComponent } from './achievement-details/achievement-details.component';
+import { CheckInComponent } from './check-in/check-in.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
       {
         path: 'achievement/:id',
         component: AchievementDetailsComponent
+      },
+      {
+        path: 'achievement/:id/check-in',
+        component: CheckInComponent
       }
     ]
   },
