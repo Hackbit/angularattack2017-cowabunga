@@ -3,6 +3,7 @@ import * as firebase from 'firebase/app';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import { AngularFireAuth } from 'angularfire2/auth';
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'cowabunga-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   error;
   signedIn;
 
-  constructor(private afAuth: AngularFireAuth) { }
+  constructor(private afAuth: AngularFireAuth, private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -33,6 +34,7 @@ export class LoginComponent implements OnInit {
       data => {
         this.signedIn = true;
         this.error = null;
+        this.userService.createUser();
       },
       error => {
         this.error = error;

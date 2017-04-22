@@ -3,6 +3,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Achievement } from '../achievement';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from '../user';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'cowabunga-my-profile',
@@ -12,11 +13,15 @@ import { User } from '../user';
 export class MyProfileComponent implements OnInit {
   user: User;
 
-  constructor(private database: AngularFireDatabase, private auth: AngularFireAuth) {
+  constructor(
+    private database: AngularFireDatabase,
+    private auth: AngularFireAuth,
+    private userService: UserService) {
   }
 
   ngOnInit() {
-    this.database.object(`users/${this.auth.auth.currentUser.uid}`).subscribe(user => this.user = user);
+    this.userService.getUser()
+      .subscribe(user => this.user = user);
   }
 
 }

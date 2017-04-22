@@ -14,6 +14,7 @@ import { AchievementsComponent } from './achievements/achievements.component';
 import { AchievementComponent } from './achievement/achievement.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { AuthGuard } from './auth.guard';
     AngularFireAuthModule,
     AngularFireDatabaseModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
