@@ -1,16 +1,5 @@
-:host {
-  flex: 0 0 50px;
-}
-
 .header {
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
-  height: 160px;
-  position: fixed;
-  top: 0;
-  width: 100%;
 }
 
 .header__back {
