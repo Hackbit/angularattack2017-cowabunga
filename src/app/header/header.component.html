@@ -4,6 +4,6 @@
   </div>
   <div class="header__title">Browse</div>
   <a routerLink="/app/my-profile" class="header__profile">
-    <img [src]="user?.photoURL" class="header__profile-image" />
+    <img [src]="(user | async)?.photoURL" class="header__profile-image" />
   </a>
 </header>

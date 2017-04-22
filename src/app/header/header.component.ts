@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'app/user.service';
 import { User } from 'app/user';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'cowabunga-header',
@@ -8,12 +9,12 @@ import { User } from 'app/user';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  user: User;
+  user: Observable<User>;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getUser().subscribe(user => this.user = user);
+    this.user = this.userService.getUser();
   }
 
 }

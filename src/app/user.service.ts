@@ -4,6 +4,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { User } from 'app/user';
 import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/take';
 
 @Injectable()
 export class UserService {
@@ -17,7 +18,7 @@ export class UserService {
       this.database.object(`users/${this.afAuth.auth.currentUser.uid}`).update(
         {name: user.displayName, photoURL: user.photoURL, achievements: []}
       );
-    }).subscribe();
+    }).take(1).subscribe();
   }
 
   getUser(): Observable<User> {

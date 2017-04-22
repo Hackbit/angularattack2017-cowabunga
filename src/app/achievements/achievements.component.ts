@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Achievement } from '../achievement';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'cowabunga-achievements',
@@ -8,12 +9,12 @@ import { AngularFireDatabase } from 'angularfire2/database';
   styleUrls: ['./achievements.component.css']
 })
 export class AchievementsComponent implements OnInit {
-  achievements: Achievement[];
+  achievements: Observable<Achievement[]>;
 
   constructor(private firebase: AngularFireDatabase) {
   }
 
   ngOnInit() {
-    this.firebase.list('achievements').subscribe(list => this.achievements = list);
+    this.achievements = this.firebase.list('achievements');
   }
 }

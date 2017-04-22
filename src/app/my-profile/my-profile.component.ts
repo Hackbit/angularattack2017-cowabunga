@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Achievement } from '../achievement';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from '../user';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'cowabunga-my-profile',
   templateUrl: './my-profile.component.html',
   styleUrls: ['./my-profile.component.css']
 })
-export class MyProfileComponent implements OnInit {
+export class MyProfileComponent implements OnInit, OnDestroy {
   user: User;
+  subscription: Subscription;
 
   constructor(
     private database: AngularFireDatabase,
@@ -21,7 +23,7 @@ export class MyProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getUser()
+    this.subscription = this.userService.getUser()
       .subscribe(user => this.user = user);
   }
 
@@ -30,4 +32,7 @@ export class MyProfileComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

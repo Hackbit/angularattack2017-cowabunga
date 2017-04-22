@@ -1,1 +1,1 @@
-<cowabunga-achievement *ngFor="let achievement of achievements" [achievement]="achievement"></cowabunga-achievement>
+<cowabunga-achievement *ngFor="let achievement of achievements | async" [achievement]="achievement"></cowabunga-achievement>
