@@ -5,13 +5,16 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { firebaseAuthConfig, firebaseConfig } from './firebase-config';
+import { AngularFireModule } from 'angularfire2';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     FormsModule,
     HttpModule,
     AppRoutingModule
