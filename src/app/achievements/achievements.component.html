@@ -1,32 +1,26 @@
-<div class="view">
-  <div class="view__header">
-    <cowabunga-header title="Browse"></cowabunga-header>
-  </div>
-  <div class="view__body">
-    <div class="container-fluid">
-      <div class="text-center mb-3">
-        <div class="btn-group" dropdown [container]="'body'">
-          <button dropdownToggle type="button" class="btn btn-faded dropdown-toggle">
-            {{type}} <span class="caret"></span>
-          </button>
-          <ul *dropdownMenu class="dropdown-menu" role="menu">
-            <li role="menuitem"><a class="dropdown-item" href="#"[routerLink]="['/app/achievements']" [queryParams]="{type: 'Near by'}">
-                Near by</a>
-            </li >
-            <li role="menuitem"><a class="dropdown-item" href="#"[routerLink]="['/app/achievements']" [queryParams]="{type: 'By country'}">
-            By country
-            </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <cowabunga-achievement
-          *ngFor="let achievement of achievements | async"
-          [achievement]="achievement"
-          class="col-sm-6 col-md-4 mb-3">
-        </cowabunga-achievement>
-      </div>
+<cowabunga-header title="Browse"></cowabunga-header>
+<div class="container-fluid">
+  <div class="text-center mb-3">
+    <div class="btn-group" dropdown [container]="'body'">
+      <button dropdownToggle type="button" class="btn dropdown-toggle">
+        {{type}} <span class="caret"></span>
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li role="menuitem"><a class="dropdown-item" href="#"[routerLink]="['/app/achievements']" [queryParams]="{type: 'Near by'}">
+            Near by</a>
+        </li >
+        <li role="menuitem"><a class="dropdown-item" href="#"[routerLink]="['/app/achievements']" [queryParams]="{type: 'By country'}">
+        By country
+        </a>
+        </li>
+      </ul>
     </div>
+  </div>
+  <div class="row">
+    <cowabunga-achievement
+      *ngFor="let achievement of achievements | async"
+      [achievement]="achievement"
+      class="col-sm-6 col-md-4 mb-3">
+    </cowabunga-achievement>
   </div>
 </div>

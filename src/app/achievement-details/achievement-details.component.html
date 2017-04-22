@@ -1,30 +1,23 @@
-<div class="view__background" [style.background-image]="'url(' + achievement?.imageUrl + ')'"></div>
-<div class="view">
-  <div class="view__header">
-    <cowabunga-header hasBackButton="true"></cowabunga-header>
-  </div>
-  <div class="view__body">
-    <div class="container-fluid">
-      <div class="card mb-3">
-        <div class="card-block">
-          <h1 class="card-title">
-            {{ achievement?.name }}
-          </h1>
-          <p class="card-text">{{ achievement?.description }}</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item p-0">
-            <agm-map [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude" [zoom]="12" [scrollwheel]="false">
-              <agm-marker [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude">
-                <agm-info-window [disableAutoPan]="true">
-                  <strong>{{ achievement?.name }}</strong>
-                </agm-info-window>
-              </agm-marker>
-            </agm-map>
-          </li>
-        </ul>
-      </div>
-      <button type="button" class="btn btn-primary btn-block btn-lg" routerLink="check-in">Check in</button>
+<cowabunga-header hasBackButton="true"></cowabunga-header>
+<div class="container-fluid">
+  <div class="card mb-3">
+    <div class="card-block">
+      <h1 class="card-title">
+        {{ achievement?.name }}
+      </h1>
+      <p class="card-text">{{ achievement?.description }}</p>
     </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item p-0">
+        <agm-map [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude" [zoom]="12" [scrollwheel]="false">
+          <agm-marker [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude">
+            <agm-info-window [disableAutoPan]="true">
+              <strong>{{ achievement?.name }}</strong>
+            </agm-info-window>
+          </agm-marker>
+        </agm-map>
+      </li>
+    </ul>
   </div>
+  <button type="button" class="btn btn-primary btn-block btn-lg" routerLink="check-in">Check in</button>
 </div>

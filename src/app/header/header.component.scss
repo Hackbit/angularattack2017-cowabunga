@@ -1,11 +1,16 @@
 @import 'node_modules/bootstrap/scss/_mixins.scss';
 @import 'node_modules/bootstrap/scss/_variables.scss';
+@import '~styles/variables';
 
 .header {
-  height: 50px;
+  background-color: $color-purple;
 
-  @include media-breakpoint-up(sm) {
-    height: 60px;
+  &__spacer {
+    height: 50px;
+
+    @include media-breakpoint-up(sm) {
+      height: 60px;
+    }
   }
 }
 
@@ -14,7 +19,6 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   flex: 1 1 auto;
-  line-height: 50px;
   text-align: center;
   text-transform: uppercase;
 }

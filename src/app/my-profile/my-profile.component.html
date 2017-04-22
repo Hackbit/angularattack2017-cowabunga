@@ -1,28 +1,22 @@
-<div class="view">
-  <div class="view__header">
-    <cowabunga-header hasBackButton="true" title="My Profile" [hasProfileButton]="false"></cowabunga-header>
-  </div>
-  <div class="view__body">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="card mb-3">
-            <div class="card-header">{{user?.name}}</div>
-            <div class="card-block">
-              <img [src]="user?.photoURL" class="rounded img-fluid" />
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <button (click)="logout()" class="btn btn-primary btn-block btn-lg">Sign out</button>
-              </li>
-            </ul>
-          </div>
+<cowabunga-header hasBackButton="true" title="My Profile" [hasProfileButton]="false"></cowabunga-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card mb-3">
+        <div class="card-header">{{user?.name}}</div>
+        <div class="card-block">
+          <img [src]="user?.photoURL" class="rounded img-fluid" />
         </div>
-        <div class="col-sm-8">
-          <cowabunga-user-check-ins [checkIns]="checkIns"></cowabunga-user-check-ins>
-          <cowabunga-badges [badges]="user?.badges"></cowabunga-badges>
-        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <button (click)="logout()" class="btn btn-primary btn-block btn-lg">Sign out</button>
+          </li>
+        </ul>
       </div>
+    </div>
+    <div class="col-sm-8">
+      <cowabunga-user-check-ins [checkIns]="checkIns"></cowabunga-user-check-ins>
+      <cowabunga-badges [badges]="user?.badges"></cowabunga-badges>
     </div>
   </div>
 </div>

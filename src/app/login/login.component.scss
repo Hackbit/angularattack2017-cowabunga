@@ -1,8 +1,9 @@
 @import 'node_modules/bootstrap/scss/_mixins.scss';
 @import 'node_modules/bootstrap/scss/_variables.scss';
+@import '~styles/variables';
 
 .login {
-  background-image: linear-gradient(to bottom, rgba(133, 45, 145, 0.9) 0%, rgba(49, 42, 108, 0.9) 100%), url('/assets/background.jpg');
+  background-image: $color-gradient, url('/assets/background.jpg');
   background-position: 50% 50%;
   background-size: cover;
   bottom: 0;
