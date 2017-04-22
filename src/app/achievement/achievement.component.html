@@ -2,13 +2,10 @@
   <img [src]="achievement.imageUrl" class="card-img-top">
   <div class="card-block">
     <h4 class="card-title achievement__name">{{achievement.name}}</h4>
+    <h6 class="card-subtitle mb-2 text-muted">{{achievement.location.country}}, {{getDistance() | distance}}</h6>
     <p class="card-text">
       {{achievement.description}}
     </p>
-    <div class="achievement__location">
-      ({{achievement.location.coordinates.latitude}}, {{achievement.location.coordinates.longitude}}),
-      {{achievement.location.country}}, distance: {{getDistance() | distance}}
-    </div>
-    <div class="achievement__achieved-count">Achieve count: {{achievement.achievedCount}}</div>
+    <p class="card-text"><small class="text-muted">Achieve Count: {{achievement.achievedCount}}</small></p>
   </div>
 </div>
