@@ -6,6 +6,7 @@ import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import { UserService } from '../user.service';
 import 'rxjs/add/operator/filter';
 import { Router } from '@angular/router';
+import GithubAuthProvider = firebase.auth.GithubAuthProvider;
 
 @Component({
   selector: 'cowabunga-login',
@@ -31,6 +32,10 @@ export class LoginComponent implements OnInit {
 
   loginFacebook() {
     this.login(new FacebookAuthProvider());
+  }
+
+  loginGithub() {
+    this.login(new GithubAuthProvider());
   }
 
   private login(authprovider) {
