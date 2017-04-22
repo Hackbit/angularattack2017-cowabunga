@@ -4,6 +4,8 @@ import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import { AngularFireAuth } from 'angularfire2/auth';
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import { UserService } from '../user.service';
+import 'rxjs/add/operator/filter';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'cowabunga-login',
@@ -15,7 +17,10 @@ export class LoginComponent implements OnInit {
   error;
   signedIn;
 
-  constructor(private afAuth: AngularFireAuth, private userService: UserService) { }
+  constructor(
+    private afAuth: AngularFireAuth,
+    private userService: UserService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -43,6 +48,6 @@ export class LoginComponent implements OnInit {
   }
 
   logout() {
-    this.afAuth.auth.signOut().then(() => this.signedIn = false);
+    this.userService.signOut().then(() => this.signedIn = false);
   }
 }

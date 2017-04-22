@@ -23,4 +23,8 @@ export class UserService {
     }
     return this.database.object(`users/${this.afAuth.auth.currentUser.uid}`);
   }
+
+  signOut() {
+    return this.afAuth.auth.signOut();
+  }
 }
