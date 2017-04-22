@@ -20,7 +20,7 @@
       "prefix": "cowabunga",
       "styles": [
         "../node_modules/font-awesome/css/font-awesome.css",
-        "styles.scss"
+        "styles/main.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
