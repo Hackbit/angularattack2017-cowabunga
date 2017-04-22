@@ -36,11 +36,11 @@ export class LoginComponent implements OnInit {
   private login(authprovider) {
     // TODO check why error doesn't update
     this.afAuth.auth.signInWithPopup(authprovider).then(
-      data => {
+      () => {
         this.signedIn = true;
         this.error = null;
         this.userService.createUser();
-        this.router.navigate(['/achievements']);
+        this.router.navigate(['/app/achievements']);
       },
       error => {
         this.error = error;

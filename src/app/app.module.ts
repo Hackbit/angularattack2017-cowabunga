@@ -17,6 +17,8 @@ import { AuthGuard } from './auth.guard';
 import { UserService } from './user.service';
 import { SignedInGuard } from './signed-in.guard';
 import { HeaderComponent } from './header/header.component';
+import { LocationService } from 'app/location.service';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { HeaderComponent } from './header/header.component';
     AchievementsComponent,
     AchievementComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { HeaderComponent } from './header/header.component';
     AngularFireAuthModule,
     AngularFireDatabaseModule
   ],
-  providers: [AuthGuard, SignedInGuard, UserService],
+  providers: [AuthGuard, SignedInGuard, UserService, LocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -5,6 +5,7 @@ import { AchievementsComponent } from './achievements/achievements.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { SignedInGuard } from './signed-in.guard';
+import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   {
@@ -13,19 +14,25 @@ const routes: Routes = [
     canActivate: [SignedInGuard]
   },
   {
-    path: 'my-profile',
-    component: MyProfileComponent,
-    canActivate: [AuthGuard]
+    path: 'app',
+    component: MainComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'my-profile',
+        component: MyProfileComponent
+      },
+      {
+        path: 'achievements',
+        component: AchievementsComponent
+      }
+    ]
   },
-  {
-    path: 'achievements',
-    component: AchievementsComponent,
-    canActivate: [AuthGuard]
-  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

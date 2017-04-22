@@ -1,4 +1,6 @@
+import { Coordinates } from 'app/coordinates';
+
 export interface Location {
-  coordinates: string;
+  coordinates: Coordinates;
   country: string;
 }

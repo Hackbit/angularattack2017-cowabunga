@@ -6,8 +6,8 @@
       {{achievement.description}}
     </p>
     <div class="achievement__location">
-      ({{achievement.location.coordinates.split(',')[0]}}, {{achievement.location.coordinates.split(',')[1]}}),
-      {{achievement.location.country}}
+      ({{achievement.location.coordinates.latitude}}, {{achievement.location.coordinates.longitude}}),
+      {{achievement.location.country}}, distance: {{getDistance()}}
     </div>
     <div class="achievement__achieved-count">Achieve count: {{achievement.achievedCount}}</div>
   </div>
