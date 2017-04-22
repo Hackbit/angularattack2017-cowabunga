@@ -1,5 +1,10 @@
-Badges:
-
-<div *ngFor="let badge of badges">
-  <cowabunga-badge [badge]="badge"></cowabunga-badge>
+<div class="card mb-3">
+  <div class="card-header">
+    Badges
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let badge of badges">
+      <cowabunga-badge [badge]="badge"></cowabunga-badge>
+    </li>
+  </ul>
 </div>

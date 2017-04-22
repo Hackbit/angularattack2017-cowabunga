@@ -1,4 +1,11 @@
-<p>
-  {{ badge.name }} {{badge.description}}
-</p>
-<img src="{{badge.photoURL}}">
+<div class="row">
+  <div class="col-3">
+    <img src="{{badge.photoURL}}" class="img-fluid">
+  </div>
+  <div class="col-9">
+    <p>
+      <strong>{{badge.name}}</strong><br>
+      {{badge.description}}
+    </p>
+  </div>
+</div>

@@ -4,15 +4,21 @@
   </div>
   <div class="view__body">
     <div class="container-fluid">
-      {{user?.name}}
-      <button (click)="logout()">Sign out</button>
-      <cowabunga-achievement *ngFor="let achievement of user?.achievements" [achievement]="achievement"></cowabunga-achievement>
-
-      Upload picture to achievement: <input type="file" (change)="upload($event)">
-
-      <div>
-        <cowabunga-badges [badges]="user?.badges"></cowabunga-badges>
+      <div class="card mb-3">
+        <div class="card-block">
+          <div class="row">
+            <div class="col-9">
+              {{user?.name}}
+            </div>
+            <div class="col-3">
+              <img [src]="user?.photoURL" class="img-fluid" />
+            </div>
+          </div>
+        </div>
       </div>
+      <cowabunga-achievement *ngFor="let achievement of user?.achievements" [achievement]="achievement"></cowabunga-achievement>
+      <cowabunga-badges [badges]="user?.badges"></cowabunga-badges>
+      <button (click)="logout()" class="btn btn-primary btn-block">Sign out</button>
     </div>
   </div>
 </div>
