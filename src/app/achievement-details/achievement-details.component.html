@@ -1,20 +1,22 @@
 <div class="view">
   <div class="view__header">
     <cowabunga-header hasBackButton="true" [backgroundImageUrl]="achievement?.imageUrl"></cowabunga-header>
-</div>
+  </div>
   <div class="view__body">
     <div class="container-fluid ">
-  <p>
-    {{ achievement?.name }}
-  </p>
-  <agm-map [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude" [zoom]="12">
-    <agm-marker [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude">
-      <agm-info-window [disableAutoPan]="true">
-        <strong>{{ achievement?.name }}</strong>
-      </agm-info-window>
-    </agm-marker>
-  </agm-map>
-<button type="button" class="btn btn-success" routerLink="check-in">Check in</button>
-</div>
+      <p>
+        {{ achievement?.name }}
+      </p>
+      <agm-map [latitude]="achievement?.location.coordinates.latitude"
+               [longitude]="achievement?.location.coordinates.longitude" [zoom]="12">
+        <agm-marker [latitude]="achievement?.location.coordinates.latitude"
+                    [longitude]="achievement?.location.coordinates.longitude">
+          <agm-info-window [disableAutoPan]="true">
+            <strong>{{ achievement?.name }}</strong>
+          </agm-info-window>
+        </agm-marker>
+      </agm-map>
+      <button type="button" class="btn btn-success" routerLink="check-in">Check in</button>
+    </div>
   </div>
 </div>
