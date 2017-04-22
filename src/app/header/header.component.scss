@@ -1,16 +1,15 @@
-.header {
-  display: flex;
-}
+@import 'node_modules/bootstrap/scss/_mixins.scss';
+@import 'node_modules/bootstrap/scss/_variables.scss';
 
-.header__back {
-  color: #fff;
-  flex: 0 0 50px;
-  line-height: 50px;
-  text-align: center;
+.header {
+  height: 50px;
+
+  @include media-breakpoint-up(sm) {
+    height: 60px;
+  }
 }
 
 .header__title {
-  align-items: center;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
@@ -21,19 +20,11 @@
 }
 
 .header__profile {
-  flex: 0 0 50px;
+  text-decoration: none;
 }
 
 .header__profile-image {
-  border-radius: 50%;
   height: 30px;
-  margin-left: 10px;
-  margin-top: 10px;
   overflow: hidden;
   width: 30px;
-}
-
-h1 {
-  color: #fff;
-  font-size: 1rem;
 }

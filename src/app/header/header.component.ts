@@ -7,7 +7,7 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'cowabunga-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   user: Observable<User>;
@@ -25,5 +25,4 @@ export class HeaderComponent implements OnInit {
   back() {
     this.location.back();
   }
-
 }
