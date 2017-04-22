@@ -1,0 +1,6 @@
+
+<button (click)="loginGoogle()">Sign in with Google</button>
+<button (click)="loginFacebook()">Sign in with Facebook</button>
+<button (click)="logout()">Sign out</button>
+
+<div *ngIf="error">{{ error }}</div>
