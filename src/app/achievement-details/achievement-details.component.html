@@ -14,14 +14,16 @@
   <div class="view__body view__body--spacer">
     <div class="container-fluid">
       <p>{{ achievement?.description }}</p>
-      <agm-map [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude" [zoom]="12" [scrollwheel]="false">
-        <agm-marker [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude">
-          <agm-info-window [disableAutoPan]="true">
-            <strong>{{ achievement?.name }}</strong>
-          </agm-info-window>
-        </agm-marker>
-      </agm-map>
-      <button type="button" class="btn btn-success" routerLink="check-in">Check in</button>
+      <div class="mb-3">
+        <agm-map [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude" [zoom]="12" [scrollwheel]="false">
+          <agm-marker [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude">
+            <agm-info-window [disableAutoPan]="true">
+              <strong>{{ achievement?.name }}</strong>
+            </agm-info-window>
+          </agm-marker>
+        </agm-map>
+      </div>
+      <button type="button" class="btn btn-primary btn-block" routerLink="check-in">Check in</button>
     </div>
   </div>
 </div>
