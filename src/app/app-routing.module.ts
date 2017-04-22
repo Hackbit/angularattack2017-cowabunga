@@ -6,6 +6,7 @@ import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { SignedInGuard } from './signed-in.guard';
 import { MainComponent } from './main/main.component';
+import { AchievementDetailsComponent } from './achievement-details/achievement-details.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
       {
         path: 'achievements',
         component: AchievementsComponent
+      },
+      {
+        path: 'achievement/:id',
+        component: AchievementDetailsComponent
       }
     ]
   },

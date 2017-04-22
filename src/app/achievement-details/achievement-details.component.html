@@ -1,0 +1,10 @@
+<p>
+  {{ achievement?.name }}
+</p>
+<agm-map [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude" [zoom]="12">
+  <agm-marker [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude">
+    <agm-info-window [disableAutoPan]="true">
+      <strong>{{ achievement?.name }}</strong>
+    </agm-info-window>
+  </agm-marker>
+</agm-map>

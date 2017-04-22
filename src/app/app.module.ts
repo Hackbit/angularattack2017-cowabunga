@@ -20,6 +20,10 @@ import { HeaderComponent } from './header/header.component';
 import { LocationService } from 'app/location.service';
 import { MainComponent } from './main/main.component';
 import { DistancePipe } from './distance.pipe';
+import { AchievementDetailsComponent } from './achievement-details/achievement-details.component';
+import { AgmCoreModule } from '@agm/core';
+
+const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,7 @@ import { DistancePipe } from './distance.pipe';
     LoginComponent,
     HeaderComponent,
     MainComponent,
+    AchievementDetailsComponent,
     DistancePipe
   ],
   imports: [
@@ -39,7 +44,10 @@ import { DistancePipe } from './distance.pipe';
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AgmCoreModule.forRoot({
+      apiKey: GOOGLE_MAPS_API_KEY
+    })
   ],
   providers: [AuthGuard, SignedInGuard, UserService, LocationService],
   bootstrap: [AppComponent]
