@@ -8,10 +8,15 @@ import { AngularFireAuthModule, AUTH_PROVIDERS } from 'angularfire2/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { firebaseConfig } from './firebase-config';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AchievementsComponent } from './achievements/achievements.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MyProfileComponent,
+    AchievementsComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +24,8 @@ import { firebaseConfig } from './firebase-config';
     HttpModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

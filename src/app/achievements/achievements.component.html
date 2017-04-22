@@ -1,0 +1,11 @@
+<div *ngFor="let achievement of achievements">
+  <div class="name">{{achievement.name}}</div>
+  <div class="description">{{achievement.description}}</div>
+  <div class="location">
+    ({{achievement.location.coordinates.split(';')[0]}}, {{achievement.location.coordinates.split(';')[1]}}),
+    {{achievement.location.country}}</div>
+  <div class="achieved-count">Achieve count: {{achievement.achievedCount}}</div>
+  <div class="image">
+    <img [src]="achievement.imageUrl"/>
+  </div>
+</div>
