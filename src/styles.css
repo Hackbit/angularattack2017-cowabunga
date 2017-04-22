@@ -3,6 +3,12 @@ body {
   margin: 0;
 }
 
+.btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 1.25rem;
+  color: #fff;
+}
+
 .button {
   background-color: #fff;
   border: 0;
