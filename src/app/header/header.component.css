@@ -1,5 +1,8 @@
 .header {
   background-image: radial-gradient(circle, rgb(133, 45, 145) 0%, rgb(49, 42, 108) 100%);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   height: 160px;
   position: fixed;
@@ -25,15 +28,15 @@
 }
 
 .header__profile {
-  flex: 0 0 auto;
+  flex: 0 0 50px;
 }
 
 .header__profile-image {
   border-radius: 50%;
   height: 30px;
-  overflow: hidden;
-  margin-right: 10px;
+  margin-left: 10px;
   margin-top: 10px;
+  overflow: hidden;
   width: 30px;
 }
 

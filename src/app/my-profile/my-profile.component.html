@@ -1,4 +1,4 @@
-<cowabunga-header hasBackButton="true"></cowabunga-header>
+<cowabunga-header hasBackButton="true" title="My Profile" [hasProfileButton]="false"></cowabunga-header>
 <main class="container-fluid main">
   {{user?.name}}
   <button (click)="logout()">Sign out</button>

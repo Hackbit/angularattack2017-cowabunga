@@ -12,8 +12,10 @@ import { Location } from '@angular/common';
 export class HeaderComponent implements OnInit {
   user: Observable<User>;
 
-  @Input()
-  hasBackButton: Boolean;
+  @Input() backgroundImageUrl: String;
+  @Input() hasBackButton: Boolean;
+  @Input() hasProfileButton: Boolean = true;
+  @Input() title: String;
 
   constructor(private userService: UserService, private location: Location) { }
 

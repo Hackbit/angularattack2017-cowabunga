@@ -1,9 +1,11 @@
-<header class="header">
+<header class="header" [style.background-image]="backgroundImageUrl && 'url(' + backgroundImageUrl + ')'">
   <div class="header__back">
     <i class="fa fa-chevron-left" aria-hidden="true" (click)="back()" *ngIf="hasBackButton"></i>
   </div>
-  <div class="header__title">Browse</div>
-  <a routerLink="/app/my-profile" class="header__profile" *ngIf="(user | async)?.photoURL">
-    <img [src]="(user | async)?.photoURL" class="header__profile-image" />
-  </a>
+  <div class="header__title">{{title}}</div>
+  <div class="header__profile">
+    <a routerLink="/app/my-profile" *ngIf="hasProfileButton">
+      <img [src]="(user | async)?.photoURL" class="header__profile-image" />
+    </a>
+  </div>
 </header>
