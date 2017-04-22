@@ -1,5 +1,5 @@
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
 }
 
@@ -64,6 +64,10 @@ body {
 .btn-primary, .btn-primary:hover, .btn-primary:active {
   background-color: rgb(133, 45, 145);
   border: 0;
+}
+
+.btn-lg {
+  border-radius: 2rem;
 }
 
 .button {
