@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         this.signedIn = true;
         this.error = null;
         this.userService.createUser();
-        this.router.navigate(['/my-profile']);
+        this.router.navigate(['/achievements']);
       },
       error => {
         this.error = error;
