@@ -16,9 +16,12 @@
           </div>
         </div>
       </div>
-      <cowabunga-achievement *ngFor="let achievement of user?.achievements" [achievement]="achievement"></cowabunga-achievement>
+
+      <cowabunga-user-check-ins [checkIns]="checkIns"></cowabunga-user-check-ins>
       <cowabunga-badges [badges]="user?.badges"></cowabunga-badges>
+
       <button (click)="logout()" class="btn btn-primary btn-block btn-lg">Sign out</button>
+
     </div>
   </div>
 </div>

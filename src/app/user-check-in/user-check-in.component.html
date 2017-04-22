@@ -1,0 +1,8 @@
+<div>Description: {{ checkIn?.description }}</div>
+<div>Achievement: {{ checkIn?.achievement}}</div>
+<div>Date: {{ checkIn?.checkInTimestamp}}</div>
+
+<div *ngFor="let photoURL of checkIn?.images">
+  <img src="{{photoURL}}">
+</div>
+<!--cowabunga-user-achievement [achievementID]="cechkin?.achievement"></cowabunga-user-achievement-->

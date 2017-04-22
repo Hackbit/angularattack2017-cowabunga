@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { StorageService } from '../storage.service';
 import { Badge } from '../badge';
+import { CheckIn } from '../check-in';
 
 @Component({
   selector: 'cowabunga-my-profile',
@@ -17,6 +18,7 @@ import { Badge } from '../badge';
 export class MyProfileComponent implements OnInit, OnDestroy {
   user: User;
   subscription: Subscription;
+  checkIns: CheckIn[] = [];
 
   constructor(
     private database: AngularFireDatabase,
@@ -27,7 +29,13 @@ export class MyProfileComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription = this.userService.getUser()
-      .subscribe(user => this.user = user);
+      .subscribe(user => {
+        this.user = user;
+        if (user.checkIns) {
+          Object.keys(user.checkIns)
+            .forEach(key => this.checkIns.push(user.checkIns[key]));
+        }
+      });
   }
 
   logout() {
