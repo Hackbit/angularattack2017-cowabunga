@@ -4,16 +4,28 @@
   </div>
   <div class="login__buttons">
     <button (click)="loginGoogle()" class="btn button button--google">
-      <i class="fa fa-google" aria-hidden="true"></i>
-      Sign in with Google
+      <div class="button__icon">
+        <i class="fa fa-google" aria-hidden="true"></i>
+      </div>
+      <div class="button__label">
+        Sign in with Google
+      </div>
     </button>
     <button (click)="loginFacebook()" class="btn button button--facebook">
-      <i class="fa fa-facebook" aria-hidden="true"></i>
-      Sign in with Facebook
+      <div class="button__icon">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </div>
+      <div class="button__label">
+        Sign in with Facebook
+      </div>
     </button>
     <button class="btn button button--github">
-      <i class="fa fa-github" aria-hidden="true"></i>
-      Sign in with GitHub
+      <div class="button__icon">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </div>
+      <div class="button__label">
+        Sign in with GitHub
+      </div>
     </button>
     <div *ngIf="error">{{ error }}</div>
   </div>

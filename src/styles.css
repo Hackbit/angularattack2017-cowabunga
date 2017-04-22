@@ -7,20 +7,32 @@ body {
   background-color: #fff;
   border: 0;
   border-radius: 2rem;
+  display: flex;
   font-family: inherit;
   line-height: 1rem;
   margin-bottom: 1rem;
-  padding: 1rem 2rem;
+  padding: 1rem;
+}
+
+.button__icon {
+  flex: 0 0 2rem;
+}
+
+.button__label {
+  padding-right: 2rem;
 }
 
 .button--google {
-
+  background-color: #dd4b39;
+  color: #fff;
 }
 
 .button--facebook {
-
+  background-color: #3b5998;
+  color: #fff;
 }
 
 .button--github {
-
+  background-color: #444;
+  color: #fff;
 }
