@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 import { UserService } from './user.service';
 import { SignedInGuard } from './signed-in.guard';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SignedInGuard } from './signed-in.guard';
     MyProfileComponent,
     AchievementsComponent,
     AchievementComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
