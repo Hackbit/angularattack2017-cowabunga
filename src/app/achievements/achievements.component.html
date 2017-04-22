@@ -1,1 +1,3 @@
-<cowabunga-achievement *ngFor="let achievement of achievements | async" [achievement]="achievement"></cowabunga-achievement>
+<div class="row">
+  <cowabunga-achievement *ngFor="let achievement of achievements | async" [achievement]="achievement" class="col-sm-6 col-md-4"></cowabunga-achievement>
+</div>
