@@ -13,7 +13,7 @@
           <p class="card-text">{{ achievement?.description }}</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">
+          <li class="list-group-item p-0">
             <agm-map [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude" [zoom]="12" [scrollwheel]="false">
               <agm-marker [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude">
                 <agm-info-window [disableAutoPan]="true">
