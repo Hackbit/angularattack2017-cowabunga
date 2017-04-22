@@ -14,7 +14,7 @@ export class UserService {
   createUser() {
     this.afAuth.authState.map(user => {
       this.database.object(`users/${this.afAuth.auth.currentUser.uid}`).update(
-        {name: user.displayName, achievements: []}
+        {name: user.displayName, photoURL: user.photoURL, achievements: []}
       );
     }).subscribe();
   }

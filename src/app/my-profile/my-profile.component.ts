@@ -4,6 +4,7 @@ import { Achievement } from '../achievement';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from '../user';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'cowabunga-my-profile',
@@ -15,13 +16,18 @@ export class MyProfileComponent implements OnInit {
 
   constructor(
     private database: AngularFireDatabase,
-    private auth: AngularFireAuth,
+    private router: Router,
     private userService: UserService) {
   }
 
   ngOnInit() {
     this.userService.getUser()
       .subscribe(user => this.user = user);
+  }
+
+  logout() {
+    this.userService.signOut();
+    this.router.navigate(['/']);
   }
 
 }

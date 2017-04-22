@@ -15,8 +15,9 @@ export class SignedInGuard implements CanActivate {
       return this.userService.isSignedIn()
         .do(isSignedIn => {
           if (isSignedIn) {
-            this.router.navigate(['/my-profile']);
+            this.router.navigate(['/achievements']);
           }
-        });
+        })
+        .map(() => true);
   }
 }
