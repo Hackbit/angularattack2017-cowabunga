@@ -25,13 +25,13 @@
 
 .header__profile {
   flex: 0 0 auto;
-  line-height: 50px;
 }
 
 .header__profile-image {
   border-radius: 50%;
-  height: 40px;
+  height: 30px;
   overflow: hidden;
-  margin-right: 5px;
-  width: 40px;
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 30px;
 }

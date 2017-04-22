@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
+import { User } from 'app/user';
 import 'rxjs/add/observable/of';
 
 @Injectable()
 export class UserService {
 
-  user;
+  user: User;
 
   constructor(private afAuth: AngularFireAuth, private database: AngularFireDatabase) { }
 
@@ -19,7 +20,7 @@ export class UserService {
     }).subscribe();
   }
 
-  getUser() {
+  getUser(): Observable<User> {
     if (!this.afAuth.auth.currentUser) {
       return Observable.of(null);
     }
