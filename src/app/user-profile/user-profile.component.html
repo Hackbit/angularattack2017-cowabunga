@@ -1,9 +1,9 @@
 <cowabunga-header hasBackButton="true" [title]="(user | async)?.name" [hasProfileButton]="true"></cowabunga-header>
 <div class="container-fluid mt-3">
+  <h2 class="my-5">{{(user | async )?.name}}</h2>
   <div class="row">
     <div class="col-sm-4">
       <div class="card mb-3">
-        <h5 class="card-header">{{(user | async )?.name}}</h5>
         <div class="card-block">
           <img [src]="(user | async )?.photoURL" class="rounded img-fluid" />
         </div>
@@ -39,4 +39,3 @@
     </div>
   </div>
 </div>
-
