@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Achievement } from '../achievement';
-import { LocationService } from '../location.service';
 import { Router } from '@angular/router';
+import { Achievement } from '../achievement';
 
 @Component({
   selector: 'cowabunga-achievement',
@@ -13,17 +12,10 @@ export class AchievementComponent implements OnInit {
   @Input()
   achievement: Achievement;
 
-  constructor(private locationService: LocationService, private router: Router) {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
-  }
-
-  getDistance() {
-    return this.locationService.distanceToLocation({
-      latitude: this.achievement.location.coordinates.latitude,
-      longitude: this.achievement.location.coordinates.longitude
-    });
   }
 
   showAchievementDetails() {
