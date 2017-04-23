@@ -15,7 +15,7 @@ export class MainComponent implements OnInit, OnDestroy {
   private modal: ModalDirective;
   isModalShown;
 
-  message;
+  badge;
   badgeSubscription;
 
   constructor(
@@ -44,7 +44,7 @@ export class MainComponent implements OnInit, OnDestroy {
           .orderByChild('timestamp')
           .startAt(Date.now())
           .on('child_added', (child) => {
-            this.message = JSON.stringify(child.val());
+            this.badge = child.val();
             this.database.list(`/users/${key}/newBadges`).remove();
             this.showModal();
           });

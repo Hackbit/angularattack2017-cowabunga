@@ -4,13 +4,13 @@
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title pull-left">Auto shown modal</h4>
+          <h5 class="modal-title pull-left">You just earned a badge!</h5>
           <button type="button" class="close pull-right" aria-label="Close" (click)="hideModal()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          {{ message }}
+          <cowabunga-badge [badge]="badge"></cowabunga-badge>
         </div>
       </div>
     </div>
