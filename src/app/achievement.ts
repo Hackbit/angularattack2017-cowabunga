@@ -7,4 +7,5 @@ export interface Achievement {
   imageUrl: string;
   location: Location;
   checkInCount: number;
+  distance: number;
 }
