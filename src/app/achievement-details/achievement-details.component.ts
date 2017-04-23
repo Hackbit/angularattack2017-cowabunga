@@ -13,7 +13,7 @@ import 'rxjs/add/observable/from';
 @Component({
   selector: 'cowabunga-achievement-details',
   templateUrl: './achievement-details.component.html',
-  styleUrls: ['./achievement-details.component.css']
+  styleUrls: ['./achievement-details.component.scss']
 })
 export class AchievementDetailsComponent implements OnInit {
 
