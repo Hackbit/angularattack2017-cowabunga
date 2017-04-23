@@ -17,16 +17,10 @@
 }
 
 h1 {
-  color: #fff;
-  font-family: 'Righteous', sans-serif;
   font-size: 3rem;
-  margin: 0;
   margin-bottom: 1em;
-  letter-spacing: -1px;
-  line-height: 1;
   text-align: center;
   text-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  text-transform: lowercase;
 
   @include media-breakpoint-up(sm) {
     font-size: 5rem;
