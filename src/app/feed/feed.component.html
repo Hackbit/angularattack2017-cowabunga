@@ -1,0 +1,7 @@
+<cowabunga-header hasBackButton="true" [hasProfileButton]="true"></cowabunga-header>
+<p>
+  Latest checkins:
+</p>
+<div *ngFor="let checkIn of (checkIns | async)">
+  {{checkIn?.userName}} ({{checkIn?.date | milliseconds}}) {{checkIn?.achievement.name}}
+</div>

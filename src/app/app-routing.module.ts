@@ -9,6 +9,7 @@ import { AchievementDetailsComponent } from './achievement-details/achievement-d
 import { CheckInComponent } from './check-in/check-in.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { FeedComponent } from './feed/feed.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
       {
         path: 'user-profile/:id',
         component: UserProfileComponent
+      },
+      {
+        path: 'feed',
+        component: FeedComponent
       }
     ]
   },

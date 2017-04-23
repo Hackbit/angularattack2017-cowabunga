@@ -1,8 +1,7 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
-import { Achievement } from '../achievement';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { StorageService } from '../storage.service';
 import { UserService } from '../user.service';
 
@@ -11,13 +10,14 @@ import { UserService } from '../user.service';
   templateUrl: './check-in.component.html',
   styleUrls: ['./check-in.component.css']
 })
-export class CheckInComponent implements OnInit {
+export class CheckInComponent implements OnInit, OnDestroy {
 
   id: string;
   achievementName: string;
   description = '';
   timestamp = new Date();
   images: string[] = [];
+  subscription;
 
   constructor(private route: ActivatedRoute,
               private location: Location,
@@ -34,6 +34,12 @@ export class CheckInComponent implements OnInit {
       .subscribe(achievement => this.achievementName = achievement.name);
   }
 
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
   upload(event) {
     const file = event.srcElement.files[0];
     this.storageService.saveImage(file).subscribe(path => this.images.push(path));
@@ -48,6 +54,14 @@ export class CheckInComponent implements OnInit {
         checkInCount: value.val() + 1
       });
     });
+    this.subscription = this.userService.getUser()
+      .take(1)
+      .subscribe(user => {
+        this.afDatabase.list('checkInFeed').push({
+          date: Date.now(),
+          userName: user.name,
+          achievement: { key: this.id, name: this.achievementName }});
+      });
     this.userService.addCheckIn({
       description: this.description,
       images: this.images,
