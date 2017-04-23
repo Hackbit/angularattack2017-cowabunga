@@ -1,4 +1,10 @@
+@import '~styles/variables';
+
 /* Bootstrap overrides */
+
+a {
+  color: $color-blue;
+}
 
 .card {
   border-radius: 0;
