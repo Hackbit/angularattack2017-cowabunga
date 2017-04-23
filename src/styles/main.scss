@@ -62,4 +62,9 @@ body {
   letter-spacing: -1px;
   line-height: 1;
   text-transform: lowercase;
+
+  & a {
+    color: #fff;
+    text-decoration: none;
+  }
 }
