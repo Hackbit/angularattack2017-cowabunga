@@ -1,19 +1,21 @@
 <cowabunga-header title="Browse"></cowabunga-header>
 <div class="container-fluid mt-3">
+  <h2 class="my-5">Browse Achievements</h2>
   <div class="text-center mb-3">
     <div class="btn-group" dropdown [container]="'body'">
       <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
         {{type}} <span class="caret"></span>
       </button>
       <ul *dropdownMenu class="dropdown-menu" role="menu">
-        <li role="menuitem"><a class="dropdown-item" href="#" [routerLink]="['/app/achievements']"
-                               [queryParams]="{type: 'Nearby'}">
-          Nearby</a>
+        <li role="menuitem">
+          <a class="dropdown-item" href="#" [routerLink]="['/app/achievements']" [queryParams]="{type: 'Nearby'}">
+            Nearby
+          </a>
         </li>
-        <li role="menuitem"><a class="dropdown-item" href="#" [routerLink]="['/app/achievements']"
-                               [queryParams]="{type: 'By country'}">
-          By country
-        </a>
+        <li role="menuitem">
+          <a class="dropdown-item" href="#" [routerLink]="['/app/achievements']" [queryParams]="{type: 'By country'}">
+            By country
+          </a>
         </li>
       </ul>
     </div>

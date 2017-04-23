@@ -6,6 +6,17 @@ a {
   color: $color-blue;
 }
 
+h2 {
+  color: $color-blue;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h4 {
+  color: $color-blue;
+}
+
 .card {
   border-radius: 0;
 }
