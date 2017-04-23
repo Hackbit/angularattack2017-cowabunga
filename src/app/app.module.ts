@@ -29,6 +29,7 @@ import { StorageService } from './storage.service';
 import { UserService } from './user.service';
 import { UserCheckInsComponent } from './user-check-ins/user-check-ins.component';
 import { UserCheckInComponent } from './user-check-in/user-check-in.component';
+import { MillisecondsPipe } from './milliseconds.pipe';
 
 const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
 
@@ -47,7 +48,8 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
     BadgeComponent,
     CheckInComponent,
     UserCheckInsComponent,
-    UserCheckInComponent
+    UserCheckInComponent,
+    MillisecondsPipe
   ],
   imports: [
     BrowserModule,
