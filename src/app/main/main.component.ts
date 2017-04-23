@@ -1,9 +1,8 @@
 ///<reference path="../../../node_modules/angularfire2/database/firebase_list_observable.d.ts"/>
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { UserService } from '../user.service';
 import { ModalDirective } from 'ngx-bootstrap';
-import 'rxjs/add/operator/skip';
 
 @Component({
   selector: 'cowabunga-main',
