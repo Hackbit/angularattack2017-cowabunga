@@ -1,5 +1,5 @@
 export interface CheckIn {
-  achievement: string;
+  achievement: {key: string, name: string };
   checkInTimestamp: Date;
   description: string;
   images: string[];
