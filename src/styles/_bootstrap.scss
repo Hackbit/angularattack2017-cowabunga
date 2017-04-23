@@ -27,4 +27,8 @@ h4 {
   color: #fff;
   font-weight: bold;
   text-transform: uppercase;
+
+  &:first-child {
+    border-radius: 0;
+  }
 }
