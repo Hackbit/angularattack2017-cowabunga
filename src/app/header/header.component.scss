@@ -39,8 +39,13 @@
 }
 
 .nav {
+  font-size: 0.8rem;
   font-weight: bold;
   text-transform: uppercase;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1rem;
+  }
 
   &__item {
     color: #fff;
