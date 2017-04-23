@@ -1,9 +1,12 @@
-<a routerLink="/app/achievement/{{ checkIn?.achievement.key }}">Achievement: {{ checkIn?.achievement.name }}</a>
-<blockquote class="blockquote">
-  <p class="mb-0">{{ checkIn?.description }}</p>
-  <footer class="blockquote-footer">You were here {{ checkIn?.checkInTimestamp | milliseconds}}</footer>
-</blockquote>
-<div *ngFor="let photoURL of checkIn?.images">
-  <img src="{{photoURL}}">
+<div>
+  <a routerLink="/app/achievement/{{ checkIn?.achievement.key }}">Achievement: {{ checkIn?.achievement.name }}</a>
+  <blockquote class="blockquote">
+    <p class="mb-0">{{ checkIn?.description }}</p>
+  </blockquote>
+  <div class="row">
+    <div class="col-4 mb-3" *ngFor="let photoURL of checkIn?.images">
+      <img src="{{photoURL}}" class="img-fluid rounded">
+    </div>
+  </div>
 </div>
-<!--cowabunga-user-achievement [achievementID]="cechkin?.achievement"></cowabunga-user-achievement-->
+<small class="text-muted text-nowrap">{{ checkIn?.checkInTimestamp | milliseconds}}</small>
