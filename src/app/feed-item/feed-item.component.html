@@ -1,10 +1,11 @@
 <div class="list-group-item list-group-item-action flex-column align-items-start">
+  <h5>
+    <a routerLink="/app/achievement/{{checkIn?.achievement.key}}" >{{checkIn?.achievement.name}}</a>
+  </h5>
   <p class="mb-1">
     <a routerLink="/app/user-profile/{{checkIn?.user.key}}">
-      <img src="{{checkIn?.user.photoURL}}" class="profile-image rounded-circle mr-3">{{checkIn?.user.name}}
+      <img src="{{checkIn?.user.photoURL}}" class="profile-image rounded-circle mr-3">achieved by {{checkIn?.user.name}}
     </a>
-    achieved
-    <a routerLink="/app/achievement/{{checkIn?.achievement.key}}" >{{checkIn?.achievement.name}}</a>
   </p>
   <small class="text-muted">{{checkIn?.date | milliseconds}}</small>
 </div>
