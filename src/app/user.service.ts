@@ -8,6 +8,9 @@ import 'rxjs/add/operator/take';
 
 @Injectable()
 export class UserService {
+
+  private redirectUrl;
+
   constructor(private afAuth: AngularFireAuth, private database: AngularFireDatabase) {
   }
 
@@ -38,5 +41,13 @@ export class UserService {
     this.getUser().take(1).subscribe(user => {
       this.database.list(`users/${user.$key}/checkIns`).push(checkInData);
     });
+  }
+
+  setRedirectUrl(url: string) {
+    this.redirectUrl = url;
+  }
+
+  getRedirectUrl() {
+    return this.redirectUrl;
   }
 }

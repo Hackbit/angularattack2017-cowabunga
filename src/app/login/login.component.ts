@@ -39,13 +39,13 @@ export class LoginComponent implements OnInit {
   }
 
   private login(authprovider) {
-    // TODO check why error doesn't update
+
     this.afAuth.auth.signInWithPopup(authprovider).then(
       () => {
         this.signedIn = true;
         this.error = null;
         this.userService.createUser();
-        this.router.navigate(['/app/achievements']);
+        this.router.navigate([this.userService.getRedirectUrl()]);
       },
       error => {
         this.error = error;
