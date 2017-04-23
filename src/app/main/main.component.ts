@@ -39,7 +39,7 @@ export class MainComponent implements OnInit, OnDestroy {
     this.badgeSubscription = this.userService.getUser()
       .map(user => user.$key)
       .map(key => {
-        this.database.list(`/users/${key}/badges`)
+        this.database.list(`/users/${key}/newBadges`)
           .$ref
           .orderByChild('timestamp')
           .startAt(Date.now())
