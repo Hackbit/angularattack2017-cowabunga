@@ -4,7 +4,7 @@ export default `
   "elementType": "geometry",
   "stylers": [
     {
-      "color": "#f5f5f5"
+      "color": "#f4f4f6"
     }
   ]
 },
