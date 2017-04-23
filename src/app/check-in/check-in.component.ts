@@ -59,7 +59,7 @@ export class CheckInComponent implements OnInit, OnDestroy {
       .subscribe(user => {
         this.afDatabase.list('checkInFeed').push({
           date: Date.now(),
-          userName: user.name,
+          user: { name: user.name, photoURL: user.photoURL, key: user.$key },
           achievement: { key: this.id, name: this.achievementName }});
       });
     this.userService.addCheckIn({

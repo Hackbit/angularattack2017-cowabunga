@@ -35,6 +35,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ColorPipe } from './color.pipe';
 import { ShareButtonsModule } from 'ng2-sharebuttons';
 import { FeedComponent } from './feed/feed.component';
+import { FeedItemComponent } from './feed-item/feed-item.component';
 
 const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
 
@@ -58,7 +59,8 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
     UserComponent,
     UserProfileComponent,
     ColorPipe,
-    FeedComponent
+    FeedComponent,
+    FeedItemComponent
   ],
   imports: [
     BrowserModule,
