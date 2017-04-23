@@ -45,6 +45,7 @@ export class MainComponent implements OnInit, OnDestroy {
           .startAt(Date.now())
           .on('child_added', (child) => {
             this.message = JSON.stringify(child.val());
+            this.database.list(`/users/${key}/newBadges`).remove();
             this.showModal();
           });
       }).subscribe();
