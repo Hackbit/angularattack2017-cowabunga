@@ -20,11 +20,23 @@
       </ul>
     </div>
   </div>
-  <div class="row">
+  <div class="row" *ngIf="type === 'Nearby'">
     <cowabunga-achievement
       *ngFor="let achievement of achievements | async"
       [achievement]="achievement"
       class="col-sm-6 col-md-4 mb-3">
     </cowabunga-achievement>
+  </div>
+  <div *ngIf="type === 'By country'">
+    <div *ngFor="let group of getAchievementsGrouped(achievements | async)">
+      <h3>{{group.group}}</h3>
+      <div class="row">
+        <cowabunga-achievement
+          *ngFor="let achievement of group.achievements"
+          [achievement]="achievement"
+          class="col-sm-6 col-md-4 mb-3">
+        </cowabunga-achievement>
+      </div>
+    </div>
   </div>
 </div>

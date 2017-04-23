@@ -20,12 +20,12 @@ export class AchievementsComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(({ type = 'Nearby' }) => {
       this.type = type;
-      const achievements = this.firebase.list('achievements')
+      this.achievements = this.firebase.list('achievements')
         .do(_achievements => _achievements
           .forEach(achievement => achievement.distance = this.getDistance(achievement))
         );
       if (this.type === 'Nearby') {
-        this.achievements = achievements.map(_achievements => _achievements.sort((a, b) => {
+        this.achievements = this.achievements.map(_achievements => _achievements.sort((a, b) => {
           if (a.distance === b.distance) {
             return 0;
           }
@@ -39,6 +39,23 @@ export class AchievementsComponent implements OnInit {
     return this.locationService.distanceToLocation({
       latitude: achievement.location.coordinates.latitude,
       longitude: achievement.location.coordinates.longitude
+    });
+  }
+
+  getAchievementsGrouped(achievements: Achievement[]) {
+    if (!achievements) {
+      return [];
+    }
+    return achievements.reduce((groups, currentValue) => {
+      if (!groups.includes(currentValue.location.country)) {
+        groups.push(currentValue.location.country);
+      }
+      return groups;
+    }, []).map(group => {
+      return {
+        group: group,
+        achievements: achievements.filter(achievement => achievement.location.country === group)
+      };
     });
   }
 }
