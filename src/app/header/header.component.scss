@@ -3,7 +3,7 @@
 @import '~styles/variables';
 
 .header {
-  background-color: $color-purple;
+  background-image: linear-gradient(45deg, $color-purple 60%, $color-blue 100%);
 
   &__spacer {
     height: 50px;
