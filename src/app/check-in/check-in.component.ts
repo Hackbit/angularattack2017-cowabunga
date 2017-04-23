@@ -16,7 +16,7 @@ export class CheckInComponent implements OnInit {
   id: string;
   achievementName: string;
   description = '';
-  timestamp = Date.now();
+  timestamp = new Date();
   images: string[] = [];
 
   constructor(private route: ActivatedRoute,
@@ -51,7 +51,7 @@ export class CheckInComponent implements OnInit {
     this.userService.addCheckIn({
       description: this.description,
       images: this.images,
-      timestamp: this.timestamp,
+      timestamp: new Date(this.timestamp).getTime(),
       checkInTimestamp: Date.now(),
       achievement: { key: this.id, name: this.achievementName }
     });

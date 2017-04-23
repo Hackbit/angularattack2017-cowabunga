@@ -7,7 +7,7 @@
     </div>
     <div class="form-group">
       <label>Date:</label>
-      <input class="form-control" type="date" />
+      <input class="form-control" type="date" [ngModel]="timestamp | date:'yyyy-MM-dd'" (ngModelChange)="timestamp = $event" />
     </div>
     <div class="form-group">
       <label>Photos:</label>
