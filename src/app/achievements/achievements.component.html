@@ -29,7 +29,7 @@
   </div>
   <div *ngIf="type === 'By country'">
     <div *ngFor="let group of getAchievementsGrouped(achievements | async)">
-      <h3>{{group.group}}</h3>
+      <h3 class="mb-3">{{group.group}}</h3>
       <div class="row">
         <cowabunga-achievement
           *ngFor="let achievement of group.achievements"
@@ -37,6 +37,7 @@
           class="col-sm-6 col-md-4 mb-3">
         </cowabunga-achievement>
       </div>
+      <hr />
     </div>
   </div>
 </div>
