@@ -7,6 +7,7 @@
 
 # dependencies
 /node_modules
+/functions/node_modules
 
 # IDEs and editors
 /.idea
@@ -41,3 +42,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+yarn-error.log
+firebase-debug.log
+functions/cowabunga-c7b8f-firebase-adminsdk-cbz3i-1f71114397.json
