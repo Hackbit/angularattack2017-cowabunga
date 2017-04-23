@@ -4,7 +4,7 @@ const serviceAccount = require('./admin-key.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://cowabunga-c7b8f.firebaseio.com"
+  databaseURL: "https://cowabunga-checkin.firebaseio.com"
 });
 
 const reduce = Function.bind.call(Function.call, Array.prototype.reduce);
@@ -27,13 +27,13 @@ if (!Object.entries) {
 exports.checkForBadges = functions.database.ref('/users/{userId}/checkIns')
   .onWrite(event => {
     const achievement = Object.values(event.data.val())[0].achievement;
-    console.log('Achievement: ' + achievement + ', key: ' + achievement.key);
+    console.log(`Achievement key: ${achievement.key}`);
     const userId = event.params.userId;
     console.log(`Resolving badges for user ${userId}`);
     return admin.database().ref('/badges').once('value').then(badgesSnapshot => {
-      const badges = badgesSnapshot.val();
+      const badges = Object.values(badgesSnapshot.val());
       console.log(`There are ${badges.length} badges in total.`);
-      admin.database().ref(`/users/${userId}/badges`).once('value').then(userBadgesSnapshot => {
+      return admin.database().ref(`/users/${userId}/badges`).once('value').then(userBadgesSnapshot => {
         let userBadges = [];
         if (userBadgesSnapshot.val()) {
           userBadges = userBadgesSnapshot.val();
@@ -44,7 +44,7 @@ exports.checkForBadges = functions.database.ref('/users/{userId}/checkIns')
           //.filter(badge => !userBadgeIds.includes(badge.$key))
           .filter(badge => badge.achievements.includes(achievement.key));
         console.log(`User has ${possibleBadges.length} potential badges to earn.`);
-        admin.database().ref(`/users/${userId}/checkIns`).once('value').then(checkInsSnapshot => {
+        return admin.database().ref(`/users/${userId}/checkIns`).once('value').then(checkInsSnapshot => {
           let checkIns = [];
           if (checkInsSnapshot.val()) {
             checkIns = Object.values(checkInsSnapshot.val());
@@ -57,7 +57,7 @@ exports.checkForBadges = functions.database.ref('/users/{userId}/checkIns')
               console.log(`User earned badge ${badge.name}.`);
               badge.timestamp = Date.now();
               admin.database().ref(`/users/${userId}/badges`).push(badge);
-              admin.database().ref(`/users/${userId}/newBadges`).push(badge);
+              return admin.database().ref(`/users/${userId}/newBadges`).push(badge);
             }
           })
         });
