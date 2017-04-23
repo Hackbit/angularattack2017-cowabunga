@@ -41,8 +41,10 @@ export class CheckInComponent implements OnInit, OnDestroy {
   }
 
   upload(event) {
-    const file = event.srcElement.files[0];
-    this.storageService.saveImage(file).subscribe(path => this.images.push(path));
+      for (let i = 0; i < event.srcElement.files.length; i++) {
+        const image = event.srcElement.files[i];
+        this.storageService.saveImage(image).subscribe(path => this.images.push(path));
+      }
   }
 
   checkIn() {
