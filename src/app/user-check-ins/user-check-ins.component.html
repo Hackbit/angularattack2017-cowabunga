@@ -1,8 +1,8 @@
 <div class="card mb-3">
-  <h5 class="card-header border-bottom-0 d-flex justify-content-between">
+  <h6 class="card-header border-bottom-0 d-flex justify-content-between">
     Check-Ins
     <span class="badge badge-default badge-pill">{{checkIns?.length}}</span>
-  </h5>
+  </h6>
   <ul class="list-group list-group-flush">
     <li class="list-group-item" *ngFor="let checkIn of checkIns">
       <cowabunga-user-check-in [checkIn]="checkIn"></cowabunga-user-check-in>
