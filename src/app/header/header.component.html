@@ -9,7 +9,7 @@
       </div>
       <div class="col-3">
         <a routerLink="/app/my-profile" *ngIf="hasProfileButton" class="header__profile d-flex flex-row align-items-center justify-content-end text-white">
-          <div class="hidden-sm-down mr-3">Käyttäjännimi</div>
+          <div class="hidden-sm-down mr-3">{{(user | async)?.name}}</div>
           <img [src]="(user | async)?.photoURL" class="header__profile-image rounded-circle" />
         </a>
       </div>
