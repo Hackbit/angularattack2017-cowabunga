@@ -9,8 +9,8 @@ export class DistancePipe implements PipeTransform {
       return '-';
     }
     if (value < 1) {
-      return Math.round(value * 100) + 'm';
+      return Math.round(value * 10) + ' m';
     }
-    return Math.round(value * 100) / 100 + 'km';
+    return Math.round(value * 10) / 10 + ' km';
   }
 }
