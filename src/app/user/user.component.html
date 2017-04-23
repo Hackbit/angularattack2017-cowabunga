@@ -1,1 +1,4 @@
-<div (click)="navigateToUserProfile()"><img src="{{ user?.photoURL }}" class="profile-image"> {{ user?.name }}</div>
+<div (click)="navigateToUserProfile()" class="d-flex align-items-center">
+  <img src="{{ user?.photoURL }}" class="profile-image rounded mr-3">
+  {{ user?.name }}
+</div>
