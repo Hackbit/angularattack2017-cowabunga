@@ -69,6 +69,5 @@ export class CheckInComponent implements OnInit, OnDestroy {
       checkInTimestamp: Date.now(),
       achievement: { key: this.id, name: this.achievementName }
     });
-    this.location.back();
   }
 }
