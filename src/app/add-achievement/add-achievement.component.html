@@ -1,0 +1,29 @@
+<p>
+  New achievement
+</p>
+<div class="container-fluid">
+  <div class="row">
+  name: <input [(ngModel)]="name">
+  </div>
+  <div class="row">
+description: <textarea [(ngModel)]="description" rows="4"></textarea>
+  </div>
+  <div class="row">
+    image: <input id="upload" class="form-control" type="file" (change)="upload($event)">
+  </div>
+  <div class="row">
+    imageURL: {{ photoURL }}
+  </div>
+    <div class="row">
+country: <input [(ngModel)]="country">
+  </div>
+  <div class="row">
+latitude: <input [(ngModel)]="latitude">
+  </div>
+  <div class="row">
+longitude: <input [(ngModel)]="longitude">
+  </div>
+
+  <button (click)="save()">Save</button>
+
+</div>

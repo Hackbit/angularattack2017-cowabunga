@@ -10,6 +10,7 @@ import { CheckInComponent } from './check-in/check-in.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { FeedComponent } from './feed/feed.component';
+import { AddAchievementComponent } from './add-achievement/add-achievement.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
       {
         path: 'feed',
         component: FeedComponent
+      },
+      {
+        path: 'achcreat0r',
+        component: AddAchievementComponent
       }
     ]
   },
