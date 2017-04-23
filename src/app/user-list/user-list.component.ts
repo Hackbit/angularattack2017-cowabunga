@@ -11,10 +11,9 @@ import 'rxjs/add/observable/from';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
-export class UserListComponent implements OnInit, OnDestroy {
+export class UserListComponent implements OnInit {
 
   users: Observable<User[]>;
-  subscription;
 
   constructor(
     private database: AngularFireDatabase,
@@ -38,9 +37,4 @@ export class UserListComponent implements OnInit, OnDestroy {
           })
       );
   }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
 }

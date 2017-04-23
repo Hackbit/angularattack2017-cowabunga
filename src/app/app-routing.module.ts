@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { AchievementDetailsComponent } from './achievement-details/achievement-details.component';
 import { CheckInComponent } from './check-in/check-in.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
       {
         path: 'user-list',
         component: UserListComponent
+      },
+      {
+        path: 'user-profile/:id',
+        component: UserProfileComponent
       }
     ]
   },

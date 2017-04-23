@@ -1,0 +1,17 @@
+<cowabunga-header hasBackButton="true" [title]="(user | async)?.name" [hasProfileButton]="true"></cowabunga-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card mb-3">
+        <div class="card-header">{{(user | async)?.name}}</div>
+        <div class="card-block">
+          <img [src]="(user | async)?.photoURL" class="rounded img-fluid" />
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <cowabunga-user-check-ins [checkIns]="checkIns"></cowabunga-user-check-ins>
+      <cowabunga-badges [badges]="(user | async)?.badges"></cowabunga-badges>
+    </div>
+  </div>
+</div>
