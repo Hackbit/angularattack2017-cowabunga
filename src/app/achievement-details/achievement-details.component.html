@@ -5,6 +5,7 @@
       <h1 class="card-title">
         {{ achievement?.name }}
       </h1>
+      <p *ngIf="userCheckedIn" class="card-text">You have been here!</p>
       <p class="card-text">{{ achievement?.description }}</p>
     </div>
     <ul class="list-group list-group-flush">
@@ -19,5 +20,5 @@
       </li>
     </ul>
   </div>
-  <button type="button" class="btn btn-primary btn-block btn-lg" routerLink="check-in">Check in</button>
+  <button *ngIf="!userCheckedIn" type="button" class="btn btn-primary btn-block btn-lg" routerLink="check-in">Check in</button>
 </div>
