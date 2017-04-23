@@ -2,7 +2,7 @@
 
 <div class="container-fluid mt-3">
   <div class="card">
-    <h4 class="card-header border-bottom-0">Latest checkins</h4>
+    <h4 class="card-header border-bottom-0">Latest Check-Ins</h4>
     <ul class="list-group list-group-flush">
       <li class="list-group-item" *ngFor="let checkIn of (checkIns | async)">
         <cowabunga-feed-item [checkIn]="checkIn" class="d-flex w-100 justify-content-between"></cowabunga-feed-item>
