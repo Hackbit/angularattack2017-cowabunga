@@ -41,10 +41,16 @@ export class CheckInComponent implements OnInit, OnDestroy {
   }
 
   upload(event) {
-      for (let i = 0; i < event.srcElement.files.length; i++) {
-        const image = event.srcElement.files[i];
-        this.storageService.saveImage(image).subscribe(path => this.images.push(path));
+    for (let i = 0; i < event.srcElement.files.length; i++) {
+      if (event.srcElement.files[i].size > 400 * 1024) {
+        alert('At least one of the images you tried to upload is over 400 kB and is unfortunately too big for our free quotas :(');
+        return;
       }
+    }
+    for (let i = 0; i < event.srcElement.files.length; i++) {
+      const image = event.srcElement.files[i];
+      this.storageService.saveImage(image).subscribe(path => this.images.push(path));
+    }
   }
 
   checkIn() {
@@ -62,7 +68,8 @@ export class CheckInComponent implements OnInit, OnDestroy {
         this.afDatabase.list('checkInFeed').push({
           date: Date.now(),
           user: { name: user.name, photoURL: user.photoURL, key: user.$key },
-          achievement: { key: this.id, name: this.achievementName }});
+          achievement: { key: this.id, name: this.achievementName }
+        });
       });
     this.userService.addCheckIn({
       description: this.description,
