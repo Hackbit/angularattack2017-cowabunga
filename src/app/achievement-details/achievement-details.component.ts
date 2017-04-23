@@ -35,7 +35,7 @@ export class AchievementDetailsComponent implements OnInit {
             return this.userService.getUser()
               .map(user => this.extractCheckinIds(user))
               .switchMap(checkIns => Observable.from(checkIns))
-              .filter(checkIn => checkIn.achievement === this.achievement.$key);
+              .filter(checkIn => checkIn.achievement.key === this.achievement.$key);
           })
           .subscribe(() => this.userCheckedIn = true);
       });

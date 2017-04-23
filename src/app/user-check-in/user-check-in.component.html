@@ -1,5 +1,5 @@
-<div>Description: {{ checkIn?.description }}</div>
-<div>Achievement: {{ checkIn?.achievement}}</div>
+<a routerLink="/app/achievement/{{ checkIn?.achievement.key }}">Achievement: {{ checkIn?.achievement.name }}</a>
+<div>"{{ checkIn?.description }}"</div>
 <div>Date: {{ checkIn?.checkInTimestamp}}</div>
 
 <div *ngFor="let photoURL of checkIn?.images">

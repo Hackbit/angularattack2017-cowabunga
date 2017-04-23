@@ -14,6 +14,7 @@ import { UserService } from '../user.service';
 export class CheckInComponent implements OnInit {
 
   id: string;
+  achievementName: string;
   description = '';
   timestamp = Date.now();
   images: string[] = [];
@@ -26,9 +27,11 @@ export class CheckInComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.id = params.id;
-    });
+    this.route.params
+      .map(params => params.id)
+      .do(id => this.id = id)
+      .switchMap(id => this.afDatabase.object(`achievements/${id}`))
+      .subscribe(achievement => this.achievementName = achievement.name);
   }
 
   upload(event) {
@@ -50,7 +53,7 @@ export class CheckInComponent implements OnInit {
       images: this.images,
       timestamp: this.timestamp,
       checkInTimestamp: Date.now(),
-      achievement: this.id
+      achievement: { key: this.id, name: this.achievementName }
     });
     this.location.back();
   }
