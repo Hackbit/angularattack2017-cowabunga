@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/observable/from';
+import MapStyle from './mapstyle';
 
 @Component({
   selector: 'cowabunga-achievement-details',
@@ -19,6 +20,7 @@ export class AchievementDetailsComponent implements OnInit {
 
   achievement: Achievement;
   userCheckedIn: boolean;
+  mapStyle = JSON.parse(MapStyle);
 
   constructor(private firebase: AngularFireDatabase,
               private route: ActivatedRoute,
