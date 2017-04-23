@@ -35,7 +35,7 @@
     </div>
     <div class="col-sm-8">
       <cowabunga-user-check-ins [checkIns]="checkIns"></cowabunga-user-check-ins>
-      <cowabunga-badges [badges]="(user | async )?.badges"></cowabunga-badges>
+      <cowabunga-badges [badges]="extractBadges(user | async)"></cowabunga-badges>
     </div>
   </div>
 </div>

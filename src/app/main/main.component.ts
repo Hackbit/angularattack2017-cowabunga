@@ -38,7 +38,7 @@ export class MainComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.badgeSubscription = this.userService.getUser()
       .map(user => user.$key)
-      .map(key => {
+      .do(key => {
         this.database.list(`/users/${key}/newBadges`)
           .$ref
           .orderByChild('timestamp')

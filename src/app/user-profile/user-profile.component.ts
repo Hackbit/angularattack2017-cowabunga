@@ -18,12 +18,11 @@ export class UserProfileComponent implements OnInit, OnDestroy {
   subscription;
   isMyProfile: Observable<boolean>;
 
-  constructor(
-    private route: ActivatedRoute,
-    private database: AngularFireDatabase,
-    private userService: UserService,
-    private router: Router
-  ) { }
+  constructor(private route: ActivatedRoute,
+              private database: AngularFireDatabase,
+              private userService: UserService,
+              private router: Router) {
+  }
 
   logout() {
     this.userService.signOut();
@@ -46,6 +45,16 @@ export class UserProfileComponent implements OnInit, OnDestroy {
             .forEach(key => this.checkIns.push(user.checkIns[key]));
         }
       });
+  }
+
+  extractBadges(user) {
+    if (!user || !user.badges) {
+      return [];
+    }
+    const badges = [];
+    Object.keys(user.badges)
+      .forEach(key => badges.push(user.badges[key]));
+    return badges;
   }
 
   ngOnDestroy() {
