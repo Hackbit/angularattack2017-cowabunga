@@ -43,6 +43,16 @@ export class AchievementDetailsComponent implements OnInit {
       });
   }
 
+  extractImages(achievement) {
+    if (!achievement || !achievement.images) {
+      return [];
+    }
+    const images = [];
+    Object.keys(achievement.images)
+      .forEach(key => images.push(achievement.images[key]));
+    return images;
+  }
+
   private extractCheckinIds(user) {
     if (!user.checkIns) {
       return [];
