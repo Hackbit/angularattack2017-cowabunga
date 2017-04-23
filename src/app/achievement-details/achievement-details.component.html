@@ -10,17 +10,38 @@
 </div>
 <div class="container-fluid md-3">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 mb-3">
       <div class="card">
-        <h1 class="card-header">
+        <h3 class="card-header">
           {{ achievement?.name }}
-        </h1>
+        </h3>
         <div class="card-block">
           <p class="card-text">{{ achievement?.description }}</p>
+          <h4>User Photos</h4>
+          <div class="row">
+            <div class="col-4 col-md-3 mb-3">
+              <img src="http://placehold.it/350x300" class="img-fluid" />
+            </div>
+            <div class="col-4 col-md-3 mb-3">
+              <img src="http://placehold.it/350x300" class="img-fluid" />
+            </div>
+            <div class="col-4 col-md-3 mb-3">
+              <img src="http://placehold.it/350x300" class="img-fluid" />
+            </div>
+            <div class="col-4 col-md-3 mb-3">
+              <img src="http://placehold.it/350x300" class="img-fluid" />
+            </div>
+            <div class="col-4 col-md-3 mb-3">
+              <img src="http://placehold.it/350x300" class="img-fluid" />
+            </div>
+            <div class="col-4 col-md-3 mb-3">
+              <img src="http://placehold.it/350x300" class="img-fluid" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 mb-3">
       <div class="card mb-3">
         <div class="card-block">
           <img [src]="achievement?.imageUrl" class="img-fluid rounded" />
