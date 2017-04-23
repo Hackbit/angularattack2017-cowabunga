@@ -14,7 +14,7 @@ export class AchievementsComponent implements OnInit {
   type: string;
 
   constructor(private firebase: AngularFireDatabase, private route: ActivatedRoute) {
-    this.route.queryParams.subscribe(({ type = 'Near by'}) => {
+    this.route.queryParams.subscribe(({ type = 'Nearby'}) => {
       this.type = type;
     });
   }
