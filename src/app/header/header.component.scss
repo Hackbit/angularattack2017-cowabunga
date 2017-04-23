@@ -36,3 +36,19 @@
 .logo {
   font-size: 2rem;
 }
+
+.nav {
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &__item {
+    color: #fff;
+    text-decoration: none;
+    padding-bottom: 2px;
+
+    &--active {
+      border-bottom: 2px solid #fff;
+      padding-bottom: 0;
+    }
+  }
+}

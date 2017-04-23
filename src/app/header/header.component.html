@@ -1,12 +1,12 @@
 <div class="header fixed-top">
   <div class="container-fluid">
     <div class="row align-items-center header__spacer d-flex">
-      <div class="col-3">
-        <h1 class="logo hidden-md-down"><a routerLink="/">Cowabunga</a></h1>
-        <i class="fa fa-chevron-left text-white hidden-lg-up" aria-hidden="true" (click)="back()" *ngIf="hasBackButton"></i>
-      </div>
-      <div class="col-6">
-        <div class="header__title">{{title}}</div>
+      <div class="col-9">
+        <div class="nav d-flex align-items-center">
+          <h1 class="logo hidden-md-down mr-5"><a routerLink="/">Cowabunga</a></h1>
+          <a routerLink="/app/achievements" routerLinkActive="nav__item--active" class="nav__item mr-3">Achievements</a>
+          <a routerLink="/app/user-list" routerLinkActive="nav__item--active" class="nav__item mr-3">Users</a>
+        </div>
       </div>
       <div class="col-3">
         <a routerLink="/app/my-profile" *ngIf="hasProfileButton" class="header__profile d-flex flex-row align-items-center justify-content-end text-white">
