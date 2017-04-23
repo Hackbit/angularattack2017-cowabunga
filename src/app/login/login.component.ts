@@ -45,15 +45,15 @@ export class LoginComponent implements OnInit {
         this.signedIn = true;
         this.error = null;
         this.userService.createUser();
-        this.router.navigate([this.userService.getRedirectUrl()]);
+        let url = this.userService.getRedirectUrl();
+        if (typeof url === 'undefined') {
+          url = '/app/achievements';
+        }
+        this.router.navigate([url]);
       },
       error => {
         this.error = error;
       }
     );
-  }
-
-  logout() {
-    this.userService.signOut().then(() => this.signedIn = false);
   }
 }
