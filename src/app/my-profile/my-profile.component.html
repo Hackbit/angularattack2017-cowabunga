@@ -12,6 +12,11 @@
             <button (click)="logout()" class="btn btn-primary btn-block btn-lg">Sign out</button>
           </li>
         </ul>
+        <div class="share-container">
+          <share-buttons class="withCount" [url]="'https://cowabunga-c7b8f.firebaseapp.com/app/user-profile/'+user?.$key"
+                         [whatsApp]="false" [pinterest]="false" [stumbleUpOn]="false"
+                         [showCount]="true"></share-buttons>
+        </div>
       </div>
     </div>
     <div class="col-sm-8">
