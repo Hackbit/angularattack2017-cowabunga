@@ -23,7 +23,6 @@ import { firebaseConfig } from './firebase-config';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
-import { MyProfileComponent } from './my-profile/my-profile.component';
 import { SignedInGuard } from './signed-in.guard';
 import { StorageService } from './storage.service';
 import { UserService } from './user.service';
@@ -41,7 +40,6 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
 @NgModule({
   declarations: [
     AppComponent,
-    MyProfileComponent,
     AchievementsComponent,
     AchievementComponent,
     LoginComponent,

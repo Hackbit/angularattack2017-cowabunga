@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MyProfileComponent } from './my-profile/my-profile.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
@@ -22,10 +21,6 @@ const routes: Routes = [
     component: MainComponent,
     canActivate: [AuthGuard],
     children: [
-      {
-        path: 'my-profile',
-        component: MyProfileComponent
-      },
       {
         path: 'achievements',
         component: AchievementsComponent

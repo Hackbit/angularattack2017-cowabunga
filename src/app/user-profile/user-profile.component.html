@@ -1,17 +1,42 @@
 <cowabunga-header hasBackButton="true" [title]="(user | async)?.name" [hasProfileButton]="true"></cowabunga-header>
-<div class="container-fluid">
+<div class="container-fluid mt-3">
   <div class="row">
     <div class="col-sm-4">
       <div class="card mb-3">
-        <div class="card-header">{{(user | async)?.name}}</div>
+        <h5 class="card-header">{{(user | async )?.name}}</h5>
         <div class="card-block">
-          <img [src]="(user | async)?.photoURL" class="rounded img-fluid" />
+          <img [src]="(user | async )?.photoURL" class="rounded img-fluid" />
         </div>
+        <div  *ngIf="isMyProfile | async">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="share-container">
+                <share-buttons
+                  class="withCount"
+                  [url]="'https://cowabunga-c7b8f.firebaseapp.com/app/user-profile/'+(user | async )?.$key"
+                  [whatsApp]="false" [pinterest]="false" [stumbleUpOn]="false"
+                  [showCount]="true">
+                </share-buttons>
+              </div>
+            </li>
+          </ul>
+          <div class="card-footer">
+            <p class="card-text mb-0">
+              <small class="text-muted">
+                <a href="">https://cowabunga-c7b8f.firebaseapp.com/app/user-profile/{{(user | async )?.$key}}</a>
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="isMyProfile | async">
+      <button (click)="logout()" class="btn btn-primary btn-block btn-lg">Sign out</button>
       </div>
     </div>
     <div class="col-sm-8">
       <cowabunga-user-check-ins [checkIns]="checkIns"></cowabunga-user-check-ins>
-      <cowabunga-badges [badges]="(user | async)?.badges"></cowabunga-badges>
+      <cowabunga-badges [badges]="(user | async )?.badges"></cowabunga-badges>
     </div>
   </div>
 </div>
+
