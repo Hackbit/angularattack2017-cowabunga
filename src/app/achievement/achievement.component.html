@@ -1,20 +1,23 @@
 <div class="cursor-pointer card h-100" (click)="showAchievementDetails()">
   <div class="achievement__image" [style.background-image]="'url(' + achievement.imageUrl + ')'"></div>
   <div class="card-block">
-    <div class="row">
-      <div class="col-7 col-md-8">
-        <h4 class="card-title achievement__name">{{achievement.name}}</h4>
-      </div>
-      <div class="col-5 col-md-4">
-        <p class="text-right">
-          <small class="text-muted">
-            <i class="fa fa-map-marker" aria-hidden="true" title="Distance"></i>
-            {{getDistance() | distance}}
-          </small>
-        </p>
-      </div>
-    </div>
+    <h4 class="card-title achievement__name">{{achievement.name}}</h4>
     <h6 class="card-subtitle mb-2 text-muted">{{achievement.location.country}}</h6>
-    <p class="card-text"><small class="text-muted">Achieve Count: {{achievement.checkInCount}}</small></p>
+  </div>
+  <div class="card-footer text-muted">
+    <div class="d-flex">
+      <p class="card-text pr-3 mb-0">
+        <small class="text-muted" title="Check-In Count">
+          <i class="fa fa-check-circle" aria-hidden="true"></i>
+          {{achievement.checkInCount}}
+        </small>
+      </p>
+      <p class="card-text mb-0">
+        <small class="text-muted" title="Distance">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          {{getDistance() | distance}}
+        </small>
+      </p>
+    </div>
   </div>
 </div>
