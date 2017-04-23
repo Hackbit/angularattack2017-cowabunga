@@ -1,7 +1,8 @@
 <a routerLink="/app/achievement/{{ checkIn?.achievement.key }}">Achievement: {{ checkIn?.achievement.name }}</a>
-<div>"{{ checkIn?.description }}"</div>
-<div>You were here {{ checkIn?.checkInTimestamp | milliseconds}}</div>
-
+<blockquote class="blockquote">
+  <p class="mb-0">{{ checkIn?.description }}</p>
+  <footer class="blockquote-footer">You were here {{ checkIn?.checkInTimestamp | milliseconds}}</footer>
+</blockquote>
 <div *ngFor="let photoURL of checkIn?.images">
   <img src="{{photoURL}}">
 </div>
