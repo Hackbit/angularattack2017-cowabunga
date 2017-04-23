@@ -1,8 +1,8 @@
 export const firebaseConfig = {
-  apiKey: 'AIzaSyDKVYHzYfuxIxZmMk_rovWFer6xqrhGXDw',
-  authDomain: 'cowabunga-c7b8f.firebaseapp.com',
-  databaseURL: 'https://cowabunga-c7b8f.firebaseio.com',
-  projectId: 'cowabunga-c7b8f',
-  storageBucket: 'cowabunga-c7b8f.appspot.com',
-  messagingSenderId: '202737791171'
+  apiKey: 'AIzaSyAgpG0oLMuVwx1CdSvjCb2xDnm82wnBYwc',
+  authDomain: 'cowabunga-checkin.firebaseapp.com',
+  databaseURL: 'https://cowabunga-checkin.firebaseio.com',
+  projectId: 'cowabunga-checkin',
+  storageBucket: 'cowabunga-checkin.appspot.com',
+  messagingSenderId: '420630399441'
 };
