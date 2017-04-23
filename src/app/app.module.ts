@@ -7,7 +7,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { LocationService } from 'app/location.service';
-import { BsDropdownModule, DatepickerModule } from 'ngx-bootstrap';
+import { BsDropdownModule, DatepickerModule, ModalModule } from 'ngx-bootstrap';
 import { AchievementDetailsComponent } from './achievement-details/achievement-details.component';
 import { AchievementComponent } from './achievement/achievement.component';
 import { AchievementsComponent } from './achievements/achievements.component';
@@ -73,7 +73,8 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
       apiKey: GOOGLE_MAPS_API_KEY
     }),
     BsDropdownModule.forRoot(),
-    DatepickerModule.forRoot()
+    DatepickerModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   providers: [AuthGuard, SignedInGuard, UserService, LocationService, StorageService],
   bootstrap: [AppComponent]
