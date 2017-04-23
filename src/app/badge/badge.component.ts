@@ -4,7 +4,7 @@ import { Badge } from '../badge';
 @Component({
   selector: 'cowabunga-badge',
   templateUrl: './badge.component.html',
-  styleUrls: ['./badge.component.css']
+  styleUrls: ['./badge.component.scss']
 })
 export class BadgeComponent implements OnInit {
 
