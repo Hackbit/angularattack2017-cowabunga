@@ -44,10 +44,12 @@ export class AchievementDetailsComponent implements OnInit {
   }
 
   private extractCheckinIds(user) {
+    if (!user.checkIns) {
+      return [];
+    }
     const checkIns = [];
     Object.keys(user.checkIns)
       .forEach(key => checkIns.push(user.checkIns[key]));
     return checkIns;
   }
-
 }
