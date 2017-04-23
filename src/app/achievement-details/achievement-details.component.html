@@ -6,7 +6,10 @@
     [zoom]="12"
     [scrollwheel]="false"
     [styles]="mapStyle">
-    <agm-marker [latitude]="achievement?.location.coordinates.latitude" [longitude]="achievement?.location.coordinates.longitude">
+    <agm-marker
+      [latitude]="achievement?.location.coordinates.latitude"
+      [longitude]="achievement?.location.coordinates.longitude"
+      iconUrl="/assets/marker.png">
       <agm-info-window [disableAutoPan]="true">
         <strong>{{ achievement?.name }}</strong>
       </agm-info-window>
