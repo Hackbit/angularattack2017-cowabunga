@@ -17,8 +17,8 @@ export class UserComponent implements OnInit {
   ngOnInit() {
   }
 
-  navigateToUserProfile() {
-    this.router.navigate(['/app/user-profile', this.user.$key]);
+  userProfileUrl() {
+    return `/app/user-profile/${this.user.$key}`;
   }
 
 }

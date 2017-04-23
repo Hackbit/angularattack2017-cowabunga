@@ -1,4 +1,4 @@
-<div (click)="navigateToUserProfile()" class="d-flex align-items-center">
+<a [routerLink]="userProfileUrl()" class="d-flex align-items-center">
   <img src="{{ user?.photoURL }}" class="profile-image rounded-circle mr-3">
   {{ user?.name }}
-</div>
+</a>
