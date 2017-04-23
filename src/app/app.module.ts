@@ -30,6 +30,8 @@ import { UserService } from './user.service';
 import { UserCheckInsComponent } from './user-check-ins/user-check-ins.component';
 import { UserCheckInComponent } from './user-check-in/user-check-in.component';
 import { MillisecondsPipe } from './milliseconds.pipe';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserComponent } from './user/user.component';
 
 const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
 
@@ -49,7 +51,9 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCvFT5bdfdkeatC06EjeqzRSK39UVR7Buw';
     CheckInComponent,
     UserCheckInsComponent,
     UserCheckInComponent,
-    MillisecondsPipe
+    MillisecondsPipe,
+    UserListComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

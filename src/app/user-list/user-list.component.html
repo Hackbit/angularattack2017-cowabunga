@@ -1,0 +1,4 @@
+<cowabunga-header hasBackButton="true" title="Users" [hasProfileButton]="true"></cowabunga-header>
+<div *ngFor="let user of (users | async)">
+  <cowabunga-user [user]="user"></cowabunga-user>
+</div>
