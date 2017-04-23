@@ -1,8 +1,22 @@
-Tell us about your experience at {{ achievementName }}: <input type="text" [(ngModel)]="description" />
-
-<datepicker [(ngModel)]="timestamp" [showWeeks]="true"></datepicker>
-
-<input type="file" (change)="upload($event)">
-{{images.length}} files uploaded
-
-<button type="button" class="btn btn-success" (click)="checkIn()">Check in!</button>
+<cowabunga-header hasBackButton="true" title="Check In"></cowabunga-header>
+<div class="container-fluid">
+  <div class="card mb-3">
+    <div class="card-header">Check In at {{ achievementName }}</div>
+    <div class="card-block">
+      <div class="form-group">
+        <label for="experienceTextarea">Tell us about your experience:</label>
+        <textarea class="form-control" id="experienceTextarea" rows="3" [(ngModel)]="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Date:</label>
+        <datepicker [(ngModel)]="timestamp" [showWeeks]="true"></datepicker>
+      </div>
+      <div class="form-group">
+        <label>Photos:</label>
+        <input class="form-control" type="file" (change)="upload($event)">
+        <small class="form-text text-muted">{{images.length}} files uploaded</small>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="checkIn()">Check in!</button>
+    </div>
+  </div>
+</div>
