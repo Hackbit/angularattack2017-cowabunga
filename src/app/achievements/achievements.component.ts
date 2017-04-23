@@ -51,7 +51,9 @@ export class AchievementsComponent implements OnInit {
         groups.push(currentValue.location.country);
       }
       return groups;
-    }, []).map(group => {
+    }, [])
+      .sort((a, b) => a < b ? -1 : 1)
+      .map(group => {
       return {
         group: group,
         achievements: achievements.filter(achievement => achievement.location.country === group)
